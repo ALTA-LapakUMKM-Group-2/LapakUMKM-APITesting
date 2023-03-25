@@ -1,6 +1,6 @@
 package starter.LapakUMKM.Utils;
 
-public class Constant {
+public class ConstantDiscussion {
     public static final String BASE_URL = "https://gorest.co.in/public/v2";
     public static final String DIR = System.getProperty("user.dir");
     public static final String JSON_REQ_BODY_USER = DIR+"/src/test/resources/JSON/ReqBody/FeatureUser/";
