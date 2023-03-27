@@ -12,9 +12,10 @@ import starter.LapakUMKM.Utils.Constant;
 
 import java.io.File;
 
-public class ProductsStepdefs {
-@Steps
+public class ProductsGetStepdefs {
+    @Steps
     LapakProductsApi lapakProductsApi;
+
     @Given("Get list all product with valid parameter")
     public void getListAllProductWithValidParameter() {
         lapakProductsApi.setGetListProducts("products");
@@ -27,7 +28,7 @@ public class ProductsStepdefs {
 
     @And("Validate get list all valid parameter product resources json schema")
     public void validateGetListAllValidParameterProductResourcesJsonSchema() {
-        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS +"GetAllProducts.json");
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetAllProducts.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
     }
 
@@ -40,6 +41,7 @@ public class ProductsStepdefs {
     public void getListAllProductWithInvalidParameterId(String arg0) {
         lapakProductsApi.setGetListProducts("arg0");
     }
+
     @Then("Status code should be {int} Not Found")
     public void statusCodeShouldBeNotFound(int arg0) {
         SerenityRest.then().statusCode(arg0);
@@ -47,9 +49,39 @@ public class ProductsStepdefs {
 
     @And("Validate get list all product invalid parameter product resources json schema")
     public void validateGetListAllProductInvalidParameterProductResourcesJsonSchema() {
-        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS +"GetAllInvalid.json");
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetAllInvalid.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
     }
 
 
+    @Given("Get product by id {int} with valid parameter")
+    public void getProductByIdWithValidParameter(int arg0) {
+        lapakProductsApi.setGetListProductsId(arg0);
+    }
+
+    @When("Send get product by id parameter")
+    public void sendProductByIdParameter() {
+        SerenityRest.when().get(lapakProductsApi.GET_LIST_PRODUCTS_ID);
+
+    }
+
+    @And("Validate product by id valid parameter product resources json schema")
+    public void validateProductByIdValidParameterProductResourcesJsonSchema() {
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetListProductById.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
+    }
+
+    @Given("Get product by id with invalid parameter id {int}")
+    public void getProductByIdWithInvalidParameterIdId(int id) {
+        lapakProductsApi.setGetListProductsId(id);
+
+    }
+
+
+    @And("Validate get product by id invalid parameter product resources json schema")
+    public void validateGetProductByIdInvalidParameterProductResourcesJsonSchema() {
+    }
+
 }
+
+

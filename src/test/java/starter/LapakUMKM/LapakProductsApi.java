@@ -11,7 +11,7 @@ public class LapakProductsApi {
     String FIRSTNAME = faker.name().firstName();
     public static  String TOKEN = "7bf93ec8d77c033e571a1dbcb59e5985a4297bcbb530efb8698d25b22919d782";
     public static String GET_LIST_PRODUCTS = Constant.BASE_URL + "/{products}";
-    public static String GET_LIST_USERS_PAGE = Constant.BASE_URL + "/users?page={id}";
+    public static String GET_LIST_PRODUCTS_ID = Constant.BASE_URL + "/products/{id}";
     public static String GET_LIST_TODOS = Constant.BASE_URL + "/{todos}";
     public static String GET_SINGLE_USER = Constant.BASE_URL + "/users/{id}";
     public static String POST_CREATE_USER = Constant.BASE_URL + "/{post}/";
@@ -23,6 +23,14 @@ public class LapakProductsApi {
         SerenityRest.given()
                 .pathParam("products", products);
     }
+
+    @Step("Get list product by id")
+    public void setGetListProductsId(int id) {
+        SerenityRest.given()
+                .pathParam("id", id);
+    }
+
+ // lamaaa
     @Step("Token Authorization")
     public void setTOKEN (){
         SerenityRest.given()

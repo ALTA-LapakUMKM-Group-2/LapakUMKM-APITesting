@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome9",
+  "definitions": {
+    "Welcome9": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Data"
+        },
+        "message": {
+          "type": "string"
+        },
+        "status": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "data",
+        "message",
+        "status"
+      ],
+      "title": "Welcome9"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "category_id": {
+          "type": "integer"
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "stock_remaining": {
+          "type": "integer"
+        },
+        "stock_sold": {
+          "type": "integer"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        },
+        "category": {
+          "$ref": "#/definitions/Category"
+        },
+        "product_image": {
+          "type": "null"
+        },
+        "rating": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "category",
+        "category_id",
+        "description",
+        "id",
+        "price",
+        "product_image",
+        "product_name",
+        "rating",
+        "size",
+        "stock_remaining",
+        "stock_sold",
+        "user",
+        "user_id"
+      ],
+      "title": "Data"
+    },
+    "Category": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "category"
+      ],
+      "title": "Category"
+    },
+    "User": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "full_name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "shop_name": {
+          "type": "string"
+        },
+        "photo_profile": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ],
+          "qt-uri-extensions": [
+            ".png"
+          ]
+        }
+      },
+      "required": [
+        "address",
+        "full_name",
+        "photo_profile",
+        "shop_name"
+      ],
+      "title": "User"
+    }
+  }
+}
