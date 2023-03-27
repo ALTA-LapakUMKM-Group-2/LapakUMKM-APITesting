@@ -8,25 +8,29 @@
         "id": {
           "type": "integer"
         },
-        "parent_id": {
-          "type": "integer"
-        },
-        "user_id": {
-          "type": "integer"
-        },
-        "product_id": {
-          "type": "integer"
-        },
         "discussion": {
           "type": "string"
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "full_name": {
+              "type": "string"
+            },
+            "photo_profile": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "full_name",
+            "photo_profile"
+          ]
         }
       },
       "required": [
         "id",
-        "parent_id",
-        "user_id",
-        "product_id",
-        "discussion"
+        "discussion",
+        "user"
       ]
     },
     "message": {

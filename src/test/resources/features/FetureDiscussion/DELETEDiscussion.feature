@@ -1,7 +1,9 @@
-Feature: Get List Todos
+Feature: Delete Data Discussion
 
-Scenario: Get List Todos
-  Given Get list todos with valid parameter
-  When Send request get list todos
-  Then Should return status code 200 OK
-  And Validate json schema list todos
+
+@Team2 @Discussion @Positive
+Scenario: Delete data discussion with valid id
+  Given Delete data discussion with valid id 26
+  When Send delete data discussion
+  Then Status code should be 200 OK
+  And Validate delete data discussion recourse json schema

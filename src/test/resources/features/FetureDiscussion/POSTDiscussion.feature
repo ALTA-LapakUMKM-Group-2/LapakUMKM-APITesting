@@ -1,7 +1,8 @@
-Feature: Get List Todos
+Feature: POST Create new discussion data
 
-Scenario: Get List Todos
-  Given Get list todos with valid parameter
-  When Send request get list todos
-  Then Should return status code 200 OK
-  And Validate json schema list todos
+@Team2 @Discussion @Positive
+Scenario: Post create new data with valid json
+  Given Post create new data with request body valid id product and discussion
+  When Send post for create new data
+  Then Status code should be 201 Created
+  And Validate post create new data resources json schema

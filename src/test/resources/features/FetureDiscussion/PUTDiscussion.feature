@@ -1,7 +1,8 @@
-Feature: Get List Todos
+Feature: Put Update Discussion
 
-Scenario: Get List Todos
-  Given Get list todos with valid parameter
-  When Send request get list todos
-  Then Should return status code 200 OK
-  And Validate json schema list todos
+@Team2 @Discussion @Positive
+Scenario: Put update data discussion
+  Given Put update data request body discussion id 31
+  When Send put update data
+  Then Status code should be 200 OK
+  And Validate put update data resource json schema
