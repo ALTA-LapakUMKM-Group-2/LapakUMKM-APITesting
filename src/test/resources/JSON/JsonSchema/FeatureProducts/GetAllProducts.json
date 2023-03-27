@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "id": 3,
+      "user_id": 2,
+      "category_id": 1,
+      "product_name": "TAS MEVAH",
+      "description": "Warna MEVAH",
+      "size": "L",
+      "price": 1000,
+      "stock_remaining": 12,
+      "stock_sold": 0,
+      "user": {
+        "full_name": "Findryan",
+        "photo_profile": "https://storage.googleapis.com/images_lapak_umkm/profile/1679889048387827324_2.png"
+      },
+      "category": {
+        "category": "Baju"
+      },
+      "product_image": null,
+      "rating": 0
+    },
+    {
+      "id": 4,
+      "user_id": 2,
+      "category_id": 2,
+      "product_name": "TAS ADIDAS",
+      "description": "Warna MEVAH",
+      "size": "L",
+      "price": 1000,
+      "stock_remaining": 12,
+      "stock_sold": 0,
+      "user": {
+        "full_name": "Findryan",
+        "photo_profile": "https://storage.googleapis.com/images_lapak_umkm/profile/1679889048387827324_2.png"
+      },
+      "category": {
+        "category": "Fashion"
+      },
+      "product_image": null,
+      "rating": 0
+    }
+  ],
+  "message": "-",
+  "status": true
+}
