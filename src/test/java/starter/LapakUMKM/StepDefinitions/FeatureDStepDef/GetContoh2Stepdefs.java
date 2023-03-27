@@ -5,7 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.LapakUMKM.LapakAPI;
+import starter.LapakUMKM.LapakProductsApi;
 import starter.LapakUMKM.LapakResponses;
 import starter.LapakUMKM.Utils.Constant;
 import java.io.File;
@@ -16,16 +16,16 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class GetContoh2Stepdefs {
     @Steps
-    LapakAPI lapakAPI;
+    LapakProductsApi lapakProductsApi;
     @Given("Get single user detail registered {int}")
     public void getSingleUserDetailRegisteredId(int id) {
-        lapakAPI.setGetSingleUser(id);
+        lapakProductsApi.setGetSingleUser(id);
 
     }
 
     @When("Send get single user parameter")
     public void sendGetSingleUserParameter() {
-        SerenityRest.when().get(lapakAPI.GET_SINGLE_USER);
+        SerenityRest.when().get(lapakProductsApi.GET_SINGLE_USER);
     }
 
     @And("Respons body should be {int} user")
@@ -40,7 +40,7 @@ public class GetContoh2Stepdefs {
 
     @Given("Get single user detail unregistered {int}")
     public void getSingleUserDetailUnregisteredId(int id) {
-        lapakAPI.setGetSingleUser(id);
+        lapakProductsApi.setGetSingleUser(id);
     }
 
     @And("Respons body should error {string}")

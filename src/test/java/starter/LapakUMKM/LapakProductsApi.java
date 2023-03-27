@@ -6,7 +6,7 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.LapakUMKM.Utils.Constant;
 
-public class LapakAPI {
+public class LapakProductsApi {
     Faker faker = new Faker();
     String FIRSTNAME = faker.name().firstName();
     public static  String TOKEN = "7bf93ec8d77c033e571a1dbcb59e5985a4297bcbb530efb8698d25b22919d782";

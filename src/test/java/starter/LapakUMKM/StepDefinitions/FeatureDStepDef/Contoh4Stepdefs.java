@@ -7,26 +7,26 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.LapakUMKM.LapakAPI;
+import starter.LapakUMKM.LapakProductsApi;
 import starter.LapakUMKM.LapakResponses;
 import starter.LapakUMKM.Utils.Constant;
 
 import java.io.File;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static starter.LapakUMKM.LapakAPI.TOKEN;
+import static starter.LapakUMKM.LapakProductsApi.TOKEN;
 
 public class Contoh4Stepdefs {
     @Steps
-    LapakAPI lapakAPI;
+    LapakProductsApi lapakProductsApi;
     @Given("Post create new user valid paramater and json with auth token")
     public void postCreateNewUserValidParamaterAndJsonWithAuthToken() {
-        lapakAPI.setPostCreateUser("users");
+        lapakProductsApi.setPostCreateUser("users");
     }
 
     @When("Send post create new user parameter")
     public void sendPostCreateNewUserParameter() {
-        SerenityRest.when().post(lapakAPI.POST_CREATE_USER);
+        SerenityRest.when().post(lapakProductsApi.POST_CREATE_USER);
     }
 
     @Then("Status code should be {int} Created")
@@ -51,7 +51,7 @@ public class Contoh4Stepdefs {
 
     @Given("Post create new user valid parameter and json without auth token")
     public void postCreateNewUserValidParameterAndJsonWithoutAuthToken() {
-     lapakAPI.setPostCreateUserNoAuth("users");
+     lapakProductsApi.setPostCreateUserNoAuth("users");
     }
 
     @Then("Status code should be {int} Unauthorized")
@@ -73,7 +73,7 @@ public class Contoh4Stepdefs {
 
     @Given("Post create new user valid parameter and empty name json with auth token")
     public void postCreateNewUserValidParameterAndEmptyNameJsonWithAuthToken() {
-        lapakAPI.setPostCreateUserNoName("users");
+        lapakProductsApi.setPostCreateUserNoName("users");
     }
 
     @Then("Status code should be {int} Unprocessable Entity")
@@ -89,7 +89,7 @@ public class Contoh4Stepdefs {
 
     @Given("Post create new user valid parameter and empty email json with auth token")
     public void postCreateNewUserValidParameterAndEmptyEmailJsonWithAuthToken() {
-        lapakAPI.setPostCreateUserNoEmail("users");
+        lapakProductsApi.setPostCreateUserNoEmail("users");
     }
 
     @And("Respons body should be field {string} message {string}")
@@ -107,7 +107,7 @@ public class Contoh4Stepdefs {
 
     @Given("Post create new user valid parameter and empty gender json with auth token")
     public void postCreateNewUserValidParameterAndEmptyGenderJsonWithAuthToken() {
-        lapakAPI.setPostCreateUserNoGender("users");
+        lapakProductsApi.setPostCreateUserNoGender("users");
     }
 
     @And("Validate post create new user empty gender resources json schema")
@@ -118,7 +118,7 @@ public class Contoh4Stepdefs {
 
     @Given("Post create new user valid parameter and empty status json with auth token")
     public void postCreateNewUserValidParameterAndEmptyStatusJsonWithAuthToken() {
-        lapakAPI.setPostCreateUserNostatus("users");
+        lapakProductsApi.setPostCreateUserNostatus("users");
     }
 
     @And("Validate post create new user empty status resources json schema")
@@ -129,7 +129,7 @@ public class Contoh4Stepdefs {
 
     @Given("Post create new user invalid parameter {string} with auth token")
     public void postCreateNewUserInvalidParameterWithAuthToken(String users) {
-        lapakAPI.setPostCreateUser(users);
+        lapakProductsApi.setPostCreateUser(users);
     }
 
     @Given("Post create new user valid paramater and json with email registered")
@@ -150,6 +150,6 @@ public class Contoh4Stepdefs {
 
     @When("Send post create new userr parameter")
     public void sendPostCreateNewUserrParameter() {
-        SerenityRest.when().post(lapakAPI.USERS);
+        SerenityRest.when().post(lapakProductsApi.USERS);
     }
 }
