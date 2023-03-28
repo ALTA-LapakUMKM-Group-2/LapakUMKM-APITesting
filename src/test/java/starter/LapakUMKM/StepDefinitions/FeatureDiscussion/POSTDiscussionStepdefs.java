@@ -24,7 +24,7 @@ public class POSTDiscussionStepdefs {
 
     @When("Send post for create new data")
     public void sendPostForCreateNewData() {
-        SerenityRest.when().post(ConstantDiscussion.JSON_SCHEMA_POST);
+        SerenityRest.when().post(discussionAPI.POST_CREATE_DISCUSSION);
     }
 
     @Then("Status code should be {int} Created")
@@ -34,7 +34,53 @@ public class POSTDiscussionStepdefs {
 
     @And("Validate post create new data resources json schema")
     public void validatePostCreateNewDataResourcesJsonSchema() {
-        File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_POST + "/PostJsonSchema");
+        File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_POST + "/PostJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @Given("Post create new data with request body parent id is blank")
+    public void postCreateNewDataWithRequestBodyParentIdIsBlank() {
+        File jsonReq = new File(ConstantDiscussion.JSON_REQ_BODY_POST + "/PostParentBlankReqBody.json");
+        discussionAPI.setPostCreateDiscussion(jsonReq);
+    }
+
+    @Given("Post Create new data with request body invalid parent id")
+    public void postCreateNewDataWithRequestBodyInvalidParentId() {
+        File jsonReq = new File(ConstantDiscussion.JSON_REQ_BODY_POST + "/PostInvalidParentReqBody.json");
+        discussionAPI.setPostCreateDiscussion(jsonReq);
+    }
+
+    @Then("Status code should be {int} Bad Request")
+    public void statusCodeShouldBeBadRequest(int ok) {
+        SerenityRest.then().statusCode(ok);
+    }
+
+    @And("Validate post discussion invalid create new data resource json schema")
+    public void validatePostInvalidCreateNewDataResourceJsonSchema() {
+        File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_POST + "/PostInvalidJsonSchema.json");
+    }
+
+    @Given("Post Create new data with product id not registered")
+    public void postCreateNewDataWithProductIdNotRegistered() {
+        File jsonReq = new File(ConstantDiscussion.JSON_REQ_BODY_POST + "/PostNotRegisterReqBody.json");
+        discussionAPI.setPostCreateDiscussion(jsonReq);
+    }
+
+    @Given("Post Create new data with invalid id product and discussion")
+    public void postCreateNewDataWithInvalidIdProductAndDiscussion() {
+        File jsonReq = new File(ConstantDiscussion.JSON_REQ_BODY_POST + "/PostInvalidJSONReqBody.json");
+        discussionAPI.setPostCreateDiscussion(jsonReq);
+    }
+
+    @Given("Post Create new data with request body product id is blank")
+    public void postCreateNewDataWithRequestBodyProductIdIsBlank() {
+        File jsonReq = new File(ConstantDiscussion.JSON_REQ_BODY_POST + "/PostProductIDBlankReqBody.json");
+        discussionAPI.setPostCreateDiscussion(jsonReq);
+    }
+
+    @Given("Post Create new data with request body discussion id is blank")
+    public void postCreateNewDataWithRequestBodyDiscussionIdIsBlank() {
+        File jsonReq = new File(ConstantDiscussion.JSON_REQ_BODY_POST+"/PostDiscussionBlankReqBody.json");
+        discussionAPI.setPostCreateDiscussion(jsonReq);
     }
 }

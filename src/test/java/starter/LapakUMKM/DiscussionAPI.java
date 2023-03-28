@@ -10,7 +10,7 @@ import java.io.File;
 
 
 public class DiscussionAPI {
-    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InNlbGxlciIsImV4cCI6MTY4MDAwOTY0N30.jucFso1bENsO3aEpPg4rIrPqKRHX7w9Bd9ySOGpPg_o";
+    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNjgwMjI4ODI1fQ.F_q0zh99igLzjn_jtGuGKRhtu3InXM9up3JdZZL1Ajk";
 
 
     //POST

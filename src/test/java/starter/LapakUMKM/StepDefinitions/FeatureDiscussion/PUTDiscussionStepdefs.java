@@ -31,4 +31,29 @@ public class PUTDiscussionStepdefs {
         File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_PUT + "/PutJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+    @And("Validate put discussion invalid update data resource json schema")
+    public void validatePutDiscussionInvalidUpdateDataResourceJsonSchema() {
+        File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_PUT + "/PutInvalidJsonSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @Given("Put update data request body with valid json {int}")
+    public void putUpdateDataRequestBodyWithValidJson(int id) {
+        File jsonReq = new File(ConstantDiscussion.JSON_REQ_BODY_PUT + "/PutInvalidJsonReqBody.json");
+        discussionAPI.setPutUpdateDiscussion(id, jsonReq);
+    }
+
+    @Given("Put update data request body invalid product id {int}")
+    public void putUpdateDataRequestBodyInvalidProductId(int id) {
+        File jsonReq = new File(ConstantDiscussion.JSON_REQ_BODY_PUT + "/PutInvalidProductIDJsonReqBody.json");
+        discussionAPI.setPutUpdateDiscussion(id, jsonReq);
+    }
+
+    @Given("Put update data with request body product id is blank {int}")
+    public void putUpdateDataWithRequestBodyProductIdIsBlank(int id) {
+        File jsonReq = new File(ConstantDiscussion.JSON_REQ_BODY_PUT + "/PutProductIDBlankReqBody.json");
+        discussionAPI.setPutUpdateDiscussion(id, jsonReq);
+    }
+
 }
