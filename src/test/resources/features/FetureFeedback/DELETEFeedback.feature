@@ -27,3 +27,4 @@ Feature: DELETE Data feedback
     Given Delete data feedback with no registered id 1000000000
     When Send delete data feedback
     Then Status code should be 404 Not Found
+

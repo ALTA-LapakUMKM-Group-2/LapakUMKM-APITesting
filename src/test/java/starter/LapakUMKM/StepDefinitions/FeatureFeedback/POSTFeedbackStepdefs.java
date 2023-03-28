@@ -54,4 +54,46 @@ public class POSTFeedbackStepdefs {
         File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_POST +"/PostInvalidJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+    @Given("Post Create new data with request body invalid parent id")
+    public void postCreateNewDataWithRequestBodyInvalidParentId() {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostInvalidParentFeedbackReqBody.json");
+        feedbackAPI.setPostCreateFeedback(jsonReq);
+    }
+
+    @Given("Post Create new data with product id not registered")
+    public void postCreateNewDataWithProductIdNotRegistered() {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostInvalidParentFeedbackReqBody.json");
+        feedbackAPI.setPostCreateFeedback(jsonReq);
+    }
+
+    @Given("Post Create new data with invalid id product and feedback")
+    public void postCreateNewDataWithInvalidIdProductAndFeedback() {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostInvalidJsonFeedbackReqBody.json");
+        feedbackAPI.setPostCreateFeedback(jsonReq);
+    }
+
+    @Given("Post Create new data with request body product id is blank")
+    public void postCreateNewDataWithRequestBodyProductIdIsBlank() {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostProductIDBlankFeedbackReqBody.json");
+        feedbackAPI.setPostCreateFeedback(jsonReq);
+    }
+
+    @Given("Post Create new data with request body feedback id is blank")
+    public void postCreateNewDataWithRequestBodyFeedbackIdIsBlank() {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostFeedbackBlankReqBody.json");
+        feedbackAPI.setPostCreateFeedback(jsonReq);
+    }
+
+    @Given("Post Create new data with request body rating is blank")
+    public void postCreateNewDataWithRequestBodyRatingIsBlank() {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostRatingBlankFeedbackReqBody.json");
+        feedbackAPI.setPostCreateFeedback(jsonReq);
+    }
+
+    @Given("Post Create new data with request body invalid rating")
+    public void postCreateNewDataWithRequestBodyInvalidRating() {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostInvalidRatingFeedbackReqBody.json");
+        feedbackAPI.setPostCreateFeedback(jsonReq);
+    }
 }
