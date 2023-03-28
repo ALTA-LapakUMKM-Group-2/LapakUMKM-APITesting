@@ -1,7 +1,7 @@
 package starter.LapakUMKM.Utils;
 
-public class Constant {
-    public static final String BASE_URL = "https://gorest.co.in/public/v2";
+public class ConstantFeedback {
+    public static final String BASE_URL = "https://lapakumkm.mindd.site";
     public static final String DIR = System.getProperty("user.dir");
 
     //JSON REQ BODY
