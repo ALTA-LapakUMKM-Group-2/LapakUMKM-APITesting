@@ -32,4 +32,58 @@ public class PUTFeedbackStepdefs {
         File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_PUT + "/PutJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+    @And("Validate put invalid update data resource json schema")
+    public void validatePutInvalidUpdateDataResourceJsonSchema() {
+        File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_PUT + "/PutInvalidJsonSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @Given("Put update data request body feedback id {int}")
+    public void putUpdateDataRequestBodyFeedbackId(int id) {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_PUT + "/PutFeedbackIDReqBody.json");
+        feedbackAPI.setPutUpdateFeedback(id, jsonReq);
+    }
+
+    @Given("Put update data request body product id {int}")
+    public void putUpdateDataRequestBodyProductId(int id) {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_PUT + "/PutProductIDFeedbackReqBody.json");
+        feedbackAPI.setPutUpdateFeedback(id, jsonReq);
+    }
+
+    @Given("Put update data request body invalid product id {int}")
+    public void putUpdateDataRequestBodyInvalidProductId(int id) {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_PUT + "/PutInvalidProductIDFeedbackReqBody.json");
+        feedbackAPI.setPutUpdateFeedback(id, jsonReq);
+    }
+
+    @Given("Put update data with request body product id is blank id {int}")
+    public void putUpdateDataWithRequestBodyProductIdIsBlankId(int id) {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_PUT + "/PutProductIDBlankFeedbackReqBody.json");
+        feedbackAPI.setPutUpdateFeedback(id, jsonReq);
+    }
+
+    @Given("Put Create new data with request body rating is blank id {int}")
+    public void putCreateNewDataWithRequestBodyRatingIsBlankId(int id) {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_PUT + "/PutRatingBlankFeedbackReqBody.json");
+        feedbackAPI.setPutUpdateFeedback(id, jsonReq);
+    }
+
+    @Given("Put Create new data with request body invalid rating id {int}")
+    public void putCreateNewDataWithRequestBodyInvalidRatingId(int id) {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_PUT + "/PutRatingInvalidFeedbackReqBody.json");
+        feedbackAPI.setPutUpdateFeedback(id, jsonReq);
+    }
+
+    @Given("Given Put update data request body with valid json {int}")
+    public void givenPutUpdateDataRequestBodyWithValidJson(int id) {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_PUT + "/PutValidFeedbackReqBody.json");
+        feedbackAPI.setPutUpdateFeedback(id, jsonReq);
+    }
+
+    @Given("Put update data with feedback id is blank id {int}")
+    public void putUpdateDataWithFeedbackIdIsBlankId(int id) {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_PUT + "/PutFeedbackBlankReqBody.json");
+        feedbackAPI.setPutUpdateFeedback(id, jsonReq);
+    }
 }
