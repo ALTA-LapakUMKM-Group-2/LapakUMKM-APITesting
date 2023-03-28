@@ -6,17 +6,33 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.LapakUMKM.Utils.Constant;
 
+import java.io.File;
+
 public class LapakProductsApi {
     Faker faker = new Faker();
     String FIRSTNAME = faker.name().firstName();
-    public static  String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJleHAiOjE2ODAxNDgxNjN9.m3adJyHrWwe-lKbbTp4a1le1cOcZtQjHj4kg04ryHZI";
+    public static  String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJleHAiOjE2ODAyNzg3OTJ9.NyaxmcMOpr-tUvASkbhPS9XLJRwuSI8_YZyAuaWHCgI";
     public static String GET_LIST_PRODUCTS = Constant.BASE_URL + "/{products}";
     public static String GET_LIST_PRODUCTS_ID = Constant.BASE_URL + "/products/{id}";
     public static String GET_LIST_PRODUCTS_IMAGE = Constant.BASE_URL + "/products/{id}/images";
     public static String POST_CREATE_PRODUCTS = Constant.BASE_URL + "/{products}";
-    public static String POST_CREATE_USER = Constant.BASE_URL + "/{post}/";
-    public static String USERS  = Constant.BASE_URL + "/users/";
+    public static String POST_ADD_IMAGE = Constant.BASE_URL + "/products/{id}/upload-photo";
+    public static String DELETE_PRODUCTS_GET = Constant.BASE_URL + "/products?user_id=1";
+    public static String DELETE_PRODUCTS = Constant.BASE_URL + "/products/{id}";
 
+
+    @Step("Delete product without auth")
+    public void setDeleteProductsWithoutAuth(int id) {
+        SerenityRest.given()
+                .pathParam("id", id);
+    }
+
+    @Step("Delete product")
+    public void setDeleteProducts(int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id", id);
+    }
 
     @Step("Get list product")
     public void setGetListProducts(String products) {
@@ -26,6 +42,55 @@ public class LapakProductsApi {
 
     @Step("Get list product by id")
     public void setGetListProductsId(int id) {
+        SerenityRest.given()
+                .pathParam("id", id);
+    }
+
+    @Step("PUT update product")
+    public void setPutUpdateDataProducts(int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id", id)
+                .contentType("multipart/form-data")
+                .multiPart("category_id", "2")
+                .multiPart("product_name", "Sepatu Sneaker")
+                .multiPart("description", "hayang wee gratis")
+                .multiPart("price", "120000")
+                .multiPart("stock_remaining", "100")
+                .multiPart("size", "42");
+    }
+
+    @Step("PUT update product without req json")
+    public void setPutUpdateDataProductsWithoutReqJson(int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id", id);
+
+    }
+
+    @Step("PUT update product invalid parameter")
+    public void setPutUpdateDataProductsInvalidParameter(int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id", id);
+    }
+
+    @Step("PUT update product invalid json req")
+    public void setPutUpdateDataProductsInvalidJsonReq(int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id", id)
+                .contentType("multipart/form-data")
+                .multiPart("category_id", "2")
+                .multiPart("product_name", "")
+                .multiPart("description", "")
+                .multiPart("price", "120000")
+                .multiPart("stock_remaining", "100")
+                .multiPart("size", "42");
+    }
+
+    @Step("PUT update product without token")
+    public void setPutUpdateDataProductsWithoutToken(int id) {
         SerenityRest.given()
                 .pathParam("id", id);
     }
@@ -106,7 +171,7 @@ public class LapakProductsApi {
 
     }
 
-    @Step("post create products without ReqBody")
+    @Step("post create products without String ReqBody")
     public void setPostCreateProductsWithoutStringReqbody(String products) {
         SerenityRest.given()
                 .header("Authorization","Bearer "+TOKEN)
@@ -118,6 +183,57 @@ public class LapakProductsApi {
                 .multiPart("price", "120000")
                 .multiPart("stock_remaining", "100")
                 .multiPart("size", "42");
+    }
+
+    @Step("post add iamge")
+    public void setPostAddImage(File image, int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id", id)
+                .contentType("multipart/form-data")
+                .multiPart("photo_product", image);
+    }
+
+    @Step("post add iamge without auth token")
+    public void setPostAddImageWithoutAuthToken(File image, int id) {
+        SerenityRest.given()
+                .pathParam("id", id)
+                .contentType("multipart/form-data")
+                .multiPart("photo_product", image);
+    }
+
+    @Step("post add iamge with other extension")
+    public void setPostAddImageOtherExtension(File image, int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id", id)
+                .contentType("multipart/form-data")
+                .multiPart("photo_product", image);
+    }
+
+    @Step("post add iamge with large file")
+    public void setPostAddImageLargeExtension(File image, int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id", id)
+                .contentType("multipart/form-data")
+                .multiPart("photo_product", image);
+    }
+
+    @Step("post add iamge without file")
+    public void setPostAddImageWithoutFile(int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id", id);
+
+    }
+
+    @Step("post add iamge invalid parameter")
+    public void setPostAddImageInvalidParameter(int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id", id);
+
     }
 
  // lamaaa

@@ -91,4 +91,146 @@ public class ProductPostPutStepdefs {
         File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
     }
+
+    @Given("Post add image product with multipart valid")
+    public void postAddImageProductWithMultipartValid() {
+        File image = new File(Constant.UPLOAD_IMAGE + "baju3.jpeg");
+        lapakProductsApi.setPostAddImage(image,10);
+    }
+
+    @When("Send post add image product parameter")
+    public void sendPostAddImageProductParameter() {
+        SerenityRest.when().post(lapakProductsApi.POST_ADD_IMAGE);
+
+    }
+
+    @And("Validate add image product valid resources json schema")
+    public void validateAddImageProductValidResourcesJsonSchema() {
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostAddImageValid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
+    }
+
+    @Given("Post add image product with multipart valid without auth token")
+    public void postAddImageProductWithMultipartValidWithoutAuthToken() {
+        File image = new File(Constant.UPLOAD_IMAGE + "baju3.jpeg");
+        lapakProductsApi.setPostAddImageWithoutAuthToken(image,10);
+    }
+
+    @And("Validate add image product valid without auth token resources json schema")
+    public void validateAddImageProductValidWithoutAuthTokenResourcesJsonSchema() {
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
+    }
+
+    @Given("Post add image product with other extension image")
+    public void postAddImageProductWithOtherExtensionImage() {
+        File image = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
+        lapakProductsApi.setPostAddImageOtherExtension(image,10);
+    }
+
+    @Then("Status code should be {int} unsupported media type")
+    public void statusCodeShouldBeUnsupportedMediaType(int arg0) {
+        SerenityRest.then().statusCode(arg0);
+
+    }
+
+    @And("Validate add image product with other extension image json schema")
+    public void validateAddImageProductWithOtherExtensionImageJsonSchema() {
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
+    }
+
+    @Given("Post add image product with large size")
+    public void postAddImageProductWithLargeSize() {
+        File image = new File(Constant.UPLOAD_IMAGE + "largeExtension.jpg");
+        lapakProductsApi.setPostAddImageOtherExtension(image,10);
+    }
+
+    @Then("Status code should be {int} Request Entity Too Large")
+    public void statusCodeShouldBeRequestEntityTooLarge(int arg0) {
+        SerenityRest.then().statusCode(arg0);
+    }
+
+    @Given("Post add image product without file image")
+    public void postAddImageProductWithoutFileImage() {
+        lapakProductsApi.setPostAddImageWithoutFile(10);
+    }
+    @And("Validate add image product without file image resources json schema")
+    public void validateAddImageProductWithoutFileImageResourcesJsonSchema() {
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
+    }
+
+    @Given("Post add image product invalid parameter")
+    public void postAddImageProductInvalidParameter() {
+        lapakProductsApi.setPostAddImageInvalidParameter(90909);
+    }
+
+    @And("Validate add image product invalid parameter resources json schema")
+    public void validateAddImageProductInvalidParameterResourcesJsonSchema() {
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
+    }
+
+
+    @Given("PUT update a product valid json request body")
+    public void putUpdateAProductValidJsonRequestBody() {
+        lapakProductsApi.setPutUpdateDataProducts(10);
+        
+    }
+
+    @When("Send put update a product parameter")
+    public void sendPutUpdateAProductParameter() {
+        SerenityRest.when().put(lapakProductsApi.GET_LIST_PRODUCTS_ID);
+    }
+
+    @And("Validate update a product valid resources json schema")
+    public void validateUpdateAProductValidResourcesJsonSchema() {
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PutUpdateProduct.feature");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
+    }
+
+    @Given("PUT update a product valid json request body without token")
+    public void putUpdateAProductValidJsonRequestBodyWithoutToken() {
+        lapakProductsApi.setPutUpdateDataProductsWithoutToken(10);
+    }
+
+    @And("Validate update a product without auth token resources json schema")
+    public void validateUpdateAProductWithoutAuthTokenResourcesJsonSchema() {
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
+    }
+
+    @Given("PUT update a product without json request body")
+    public void putUpdateAProductWithoutJsonRequestBody() {
+        lapakProductsApi.setPutUpdateDataProductsWithoutReqJson(10);
+    }
+
+    @And("Validate update a product without req body resources json schema")
+    public void validateUpdateAProductWithoutReqBodyResourcesJsonSchema() {
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
+    }
+
+    @Given("PUT update a product invalid json request body")
+    public void putUpdateAProductInvalidJsonRequestBody() {
+        lapakProductsApi.setPutUpdateDataProductsInvalidJsonReq(10);
+    }
+
+    @And("Validate update a product invalid req body resources json schema")
+    public void validateUpdateAProductInvalidReqBodyResourcesJsonSchema() {
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
+    }
+
+    @Given("PUT update a product invalid parameter")
+    public void putUpdateAProductInvalidParameter() {
+        lapakProductsApi.setPutUpdateDataProductsInvalidParameter(80898);
+    }
+
+    @And("Validate update a product invalid parameter resources json schema")
+    public void validateUpdateAProductInvalidParameterResourcesJsonSchema() {
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
+    }
 }

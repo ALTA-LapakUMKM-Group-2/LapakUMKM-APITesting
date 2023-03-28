@@ -1,19 +1,20 @@
-Feature:
+Feature:Delete Products
 
-
-  Scenario: [Products-A005]Get image by product id valid parameter
-    Given Get image by product id 10 valid parameter
-    When Send get image by products id parameter
+@Test
+  Scenario: [Products-A027]Delete product with valid parameter
+    Given Delete product with valid parameter
+    When Send delete product parameter
     Then Status code should be 200 OK
-    And Validate image by products resources json schema
+    And Validate delete product valid resources json schema
 
-  Scenario Outline: [Products-A006]Get image by product id invalid parameter
-    Given Get image by product id invalid parameter id <id>
-    When Send get image product by id parameter
+  Scenario: [Products-A028]Delete product valid parameter without auth token
+    Given Delete product valid parameter without auth token
+    When Send delete product parameter
+    Then Status code should be 401 Unauthorized
+    And Validate delete product without auth token resources json schema
+
+  Scenario: [Products-A029]Delete product valid parameter without auth token
+    Given Delete product with invalid parameter
+    When Send delete product parameter
     Then Status code should be 404 Not Found
-    And Validate get image product by id invalid parameter product resources json schema
-    Examples:
-      | id     |
-      | 8080   |
-      | 377383 |
-      | 38373      |
+    And Validate delete product invalid resources json schema
