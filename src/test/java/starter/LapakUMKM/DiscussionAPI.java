@@ -36,6 +36,12 @@ public class DiscussionAPI {
         SerenityRest.given().header("Authorization",TOKEN).pathParam("id",id);
     }
 
+    public static String GET_INVALID_DISCUSSION = ConstantDiscussion.BASE_URL + "/discussions/{id}";
+    @Step("Get user invalid id")
+    public void setGetInvalidDiscussion(String id){
+        SerenityRest.given().header("Authorization",TOKEN).pathParam("id", id);
+    }
+
 
     //GET DATA FORM PRODUCT
     public static String GET_DATA_FROM_PRODUCT = ConstantDiscussion.BASE_URL + "/products/{id}/discussions";
@@ -43,6 +49,20 @@ public class DiscussionAPI {
     public void setGetDataFromProduct(int id){
         SerenityRest.given().header("Authorization",TOKEN).pathParam("id",id);
     }
+
+    public static String GET_DATA_INVALID_FROM_PRODUCT = ConstantDiscussion.BASE_URL + "/products/{id}/discussions";
+    @Step("Get invalid data form product")
+    public void setGetDataInvalidFromProduct(String id){
+        SerenityRest.given().header("Authorization",TOKEN).pathParam("id",id);
+    }
+
+    public static String GET_WITHOUTID_DATA_FROM_PRODUCT = ConstantDiscussion.BASE_URL + "/products//discussions";
+    @Step("Get without id from product")
+    public void setGetWithoutidDataFromProduct(){
+        SerenityRest.given().header("Authorization",TOKEN);
+
+    }
+
 
     //PUT
     public static String PUT_UPDATE_DISCUSSION = ConstantDiscussion.BASE_URL + "/discussions/{id}";
@@ -58,6 +78,12 @@ public class DiscussionAPI {
     @Step("Delete id user")
     public void setDeleteDiscussion(int id){
         SerenityRest.given().header("Authorization",TOKEN).pathParam("id", id);
+    }
+
+    public static String DELETE_INVALID_DISCUSSION = ConstantDiscussion.BASE_URL + "/discussions/{id}";
+    @Step("Delete id invalid user")
+    public void setDeleteInvalidDiscussion(String id){
+        SerenityRest.given().header("Authorization", TOKEN).pathParam("id", id);
     }
 
 

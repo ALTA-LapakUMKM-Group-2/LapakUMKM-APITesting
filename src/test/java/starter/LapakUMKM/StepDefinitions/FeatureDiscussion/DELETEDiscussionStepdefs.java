@@ -30,4 +30,30 @@ public class DELETEDiscussionStepdefs {
         File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_DELETE + "/DeleteJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+    @Given("Delete data discussion with invalid alphabet {string}")
+    public void deleteDataDiscussionWithInvalidAlphabet(String id) {
+        discussionAPI.setDeleteInvalidDiscussion(id);
+    }
+
+    @And("Validate delete data invalid id discussion recourse json schema")
+    public void validateDeleteDataInvalidIdDiscussionRecourseJsonSchema() {
+        File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_DELETE + "/DeleteInvalidIDJsonSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @When("Send delete invalid data discussion")
+    public void sendDeleteInvalidDataDiscussion() {
+        SerenityRest.when().delete(DiscussionAPI.DELETE_INVALID_DISCUSSION);
+    }
+
+    @Given("Delete data discussion with invalid special character {string}")
+    public void deleteDataDiscussionWithInvalidSpecialCharacter(String id) {
+        discussionAPI.setDeleteInvalidDiscussion(id);
+    }
+
+    @Given("Delete data discussion with no registered id {int}")
+    public void deleteDataDiscussionWithNoRegisteredId(int id) {
+        discussionAPI.setDeleteDiscussion(id);
+    }
 }

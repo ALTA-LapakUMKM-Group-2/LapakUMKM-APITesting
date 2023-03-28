@@ -53,4 +53,32 @@ public class GETDiscussionStepdefs {
         File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_GET + "/GetSingleJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+    //NEGATIVE CASE
+
+    @Given("Get single data discussion with invalid id special character {string}")
+    public void getSingleDataDiscussionWithInvalidIdSpecialCharacter(String id) {
+        discussionAPI.setGetInvalidDiscussion(id);
+    }
+
+    @Then("Status code should be {int} Not Found")
+    public void statusCodeShouldBeNotFound(int ok) {
+        SerenityRest.then().statusCode(ok);
+    }
+
+    @And("Validate get single data invalid id resource json schema")
+    public void validateGetSingleDataInvalidIdResourceJsonSchema() {
+        File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_GET + "/GetSpecialCharacterJsonSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @Given("Get single data discussion with invalid id alphabet {string}")
+    public void getSingleDataDiscussionWithInvalidIdAlphabet(String id) {
+        discussionAPI.setGetInvalidDiscussion(id);
+    }
+
+    @Given("Get single data discussion with not registered id {int}")
+    public void getSingleDataDiscussionWithNotRegisteredId(int id) {
+        discussionAPI.setGetDiscussion(id);
+    }
 }

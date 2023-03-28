@@ -2,11 +2,19 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
+    "data": {
+      "type": "null"
+    },
     "message": {
       "type": "string"
+    },
+    "status": {
+      "type": "boolean"
     }
   },
   "required": [
-    "message"
+    "data",
+    "message",
+    "status"
   ]
 }
