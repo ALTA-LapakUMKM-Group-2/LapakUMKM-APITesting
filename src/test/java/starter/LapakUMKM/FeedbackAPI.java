@@ -34,6 +34,12 @@ public class FeedbackAPI {
         SerenityRest.given().header("Authorization",TOKEN).pathParam("id", id);
     }
 
+    public static String GET_PRODUCT_FEEDBACK = ConstantFeedback.BASE_URL + "/products/{id}/feedbacks";
+    @Step("Get id by product")
+    public void setGetProductFeedback(int id){
+        SerenityRest.given().header("Authorization", TOKEN).pathParam("id", id);
+    }
+
 
 
     // PUT

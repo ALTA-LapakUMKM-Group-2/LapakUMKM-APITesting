@@ -14,5 +14,5 @@ public class ConstantFeedback {
     public static final String JSON_SCHEMA_GET = DIR+"/src/test/resources/JSON/JsonSchema/FeatureFeedback/GetJsonSchemaFeedback";
     public static final String JSON_SCHEMA_PUT = DIR+"/src/test/resources/JSON/JsonSchema/FeatureFeedback/PutJsonSchemaFeedback";
     public static final String JSON_SCHEMA_DELETE = DIR+"/src/test/resources/JSON/JsonSchema/FeatureFeedback/DeleteJsonSchemaFeedback";
-
+    public static final String JSON_SCHEMA_GET_PRODUCT = DIR+"/src/test/resources/JSON/JsonSchema/FeatureFeedback/GetFromProductJsonSchemaFeedback";
 }

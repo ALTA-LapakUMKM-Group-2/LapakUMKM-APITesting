@@ -34,7 +34,7 @@ public class GETFeedbackStepdefs {
 
     @And("Validate get list data resource json schema")
     public void validateGetListDataResourceJsonSchema() {
-        File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_GET + "/GetJsonSchema.json");
+        File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_GET + "/GetfromProductJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 
