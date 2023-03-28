@@ -6,21 +6,21 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
-import starter.LapakUMKM.LapakAPI;
+import starter.LapakUMKM.LapakUMKMCartTransaksi;
 import starter.LapakUMKM.Utils.Constant;
 
 import java.io.File;
 
 public class Contoh1Stepdefs {
-    LapakAPI lapakAPI;
+    LapakUMKMCartTransaksi lapakUMKMCartTransaksi;
 
     @Given("Get list todos with valid parameter")
-    public void getListTodosWithValidParameter() { lapakAPI.getListTodos("todos");
+    public void getListTodosWithValidParameter() { lapakUMKMCartTransaksi.getListTodos("todos");
     }
 
     @When("Send request get list todos")
     public void sendRequestGetListTodos() {
-        SerenityRest.when().get(lapakAPI.GET_LIST_TODOS);
+        SerenityRest.when().get(lapakUMKMCartTransaksi.GET_LIST_TODOS);
     }
 
     @Then("Should return status code {int} OK")
