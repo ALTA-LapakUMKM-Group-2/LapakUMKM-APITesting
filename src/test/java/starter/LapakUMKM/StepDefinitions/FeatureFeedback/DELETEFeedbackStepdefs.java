@@ -30,4 +30,19 @@ public class DELETEFeedbackStepdefs {
         File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_DELETE + "/DeleteJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+    @Given("Delete data feedback with invalid alphabet {string}")
+    public void deleteDataFeedbackWithInvalidAlphabet(String id) {
+        feedbackAPI.setDeleteInvalidIdFeedback(id);
+    }
+
+    @Given("Delete data feedback with invalid special character {string}")
+    public void deleteDataFeedbackWithInvalidSpecialCharacter(String id) {
+        feedbackAPI.setDeleteInvalidIdFeedback(id);
+    }
+
+    @Given("Delete data feedback with no registered id {int}")
+    public void deleteDataFeedbackWithNoRegisteredId(int id) {
+        feedbackAPI.setDeleteIdFeedback(id);
+    }
 }

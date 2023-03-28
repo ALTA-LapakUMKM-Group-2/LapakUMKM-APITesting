@@ -20,7 +20,7 @@ public class GETFeedbackProductStepdefs {
         feedbackAPI.setGetProductFeedback(id);
     }
 
-    @When("Send  Get data feedback from product")
+    @When("Send Get data feedback from product")
     public void sendGetDataFeedbackFromProduct() {
         SerenityRest.when().get(feedbackAPI.GET_PRODUCT_FEEDBACK);
     }
@@ -29,5 +29,25 @@ public class GETFeedbackProductStepdefs {
     public void validateFeedbackFromProductResourceJsonSchema() {
         File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_GET_PRODUCT + "/GetfromProductJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @Given("Get data feedback from product id with no registered id {int}")
+    public void getDataFeedbackFromProductIdWithNoRegisteredId(int id) {
+        feedbackAPI.setGetProductFeedback(id);
+    }
+
+    @Given("Get data feedback from  product id with invalid special character id {string}")
+    public void getDataFeedbackFromProductIdWithInvalidSpecialCharacterId(String id) {
+        feedbackAPI.setGetInvalidProductFeedback(id);
+    }
+
+    @Given("Get data feedback from  product id with invalid alphabet id {string}")
+    public void getDataFeedbackFromProductIdWithInvalidAlphabetId(String id) {
+        feedbackAPI.setGetInvalidProductFeedback(id);
+    }
+
+    @Given("Get data feedback from product id without id {string}")
+    public void getDataFeedbackFromProductIdWithoutId(String id) {
+        feedbackAPI.setGetInvalidProductFeedback(id);
     }
 }

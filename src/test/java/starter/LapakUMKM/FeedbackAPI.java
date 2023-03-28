@@ -10,7 +10,7 @@ import java.io.File;
 
 public class FeedbackAPI {
 
-    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InNlbGxlciIsImV4cCI6MTY4MDAwOTY0N30.jucFso1bENsO3aEpPg4rIrPqKRHX7w9Bd9ySOGpPg_o";
+    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNjgwMjI4ODI1fQ.F_q0zh99igLzjn_jtGuGKRhtu3InXM9up3JdZZL1Ajk";
 
     // POST
     public static String POST_CREATE_FEEDBACK = ConstantFeedback.BASE_URL + "/feedbacks";
@@ -34,12 +34,25 @@ public class FeedbackAPI {
         SerenityRest.given().header("Authorization",TOKEN).pathParam("id", id);
     }
 
+    public static String GET_INVALID_ID_FEEDBACK = ConstantFeedback.BASE_URL + "/feedbacks/{id}";
+    @Step("Get invalid id")
+    public void setGetInvalidIdFeedback(String id){
+        SerenityRest.given().header("Authorization",TOKEN).pathParam("id", id);
+    }
+
+
     public static String GET_PRODUCT_FEEDBACK = ConstantFeedback.BASE_URL + "/products/{id}/feedbacks";
     @Step("Get id by product")
     public void setGetProductFeedback(int id){
         SerenityRest.given().header("Authorization", TOKEN).pathParam("id", id);
     }
 
+    public static String GET_INVALID_PRODUCT_FEEDBACK = ConstantFeedback.BASE_URL + "/products/{id}/feedbacks";
+    @Step("Get invalid id by product")
+    public void setGetInvalidProductFeedback(String id){
+        SerenityRest.given().header("Authorization", TOKEN).pathParam("id", id);
+
+    }
 
 
     // PUT
@@ -50,7 +63,6 @@ public class FeedbackAPI {
     }
 
 
-
     // DELETE
     public  static String DELETE_ID_FEEDBACK = ConstantFeedback.BASE_URL + "/feedbacks/{id}";
     @Step("Delete id feedback")
@@ -58,5 +70,10 @@ public class FeedbackAPI {
         SerenityRest.given().header("Authorization",TOKEN).pathParam("id", id);
     }
 
+    public  static String DELETE_INVALID_ID_FEEDBACK = ConstantFeedback.BASE_URL + "/feedbacks/{id}";
+    @Step("Delete invalid id feedback")
+    public void setDeleteInvalidIdFeedback(String id){
+        SerenityRest.given().header("Authorization",TOKEN).pathParam("id", id);
+    }
 
 }

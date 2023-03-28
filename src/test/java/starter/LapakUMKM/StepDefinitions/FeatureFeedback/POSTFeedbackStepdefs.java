@@ -37,4 +37,21 @@ public class POSTFeedbackStepdefs {
         File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_POST + "/PostJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+    @Given("Post create new data with request body parent id is blank")
+    public void postCreateNewDataWithRequestBodyParentIdIsBlank() {
+        File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostParentBlankFeedbackReqBody.json");
+        feedbackAPI.setPostCreateFeedback(jsonReq);
+    }
+
+    @Then("Status code should be {int} Bad Request")
+    public void statusCodeShouldBeBadRequest(int ok) {
+        SerenityRest.then().statusCode(ok);
+    }
+
+    @And("Validate post invalid create new data resources json schema")
+    public void validatePostInvalidCreateNewDataResourcesJsonSchema() {
+        File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_POST +"/PostInvalidJsonSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
 }

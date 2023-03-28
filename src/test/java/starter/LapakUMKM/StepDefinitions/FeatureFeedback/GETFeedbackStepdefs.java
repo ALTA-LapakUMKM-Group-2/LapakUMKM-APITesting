@@ -53,4 +53,30 @@ public class GETFeedbackStepdefs {
         File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_GET + "/GetIDJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+    @Given("Get single data feedback with invalid id special character {string}")
+    public void getSingleDataFeedbackWithInvalidIdSpecialCharacter(String id) {
+        feedbackAPI.setGetInvalidIdFeedback(id);
+    }
+
+    @Then("Status code should be {int} Not Found")
+    public void statusCodeShouldBeNotFound(int ok) {
+        SerenityRest.then().statusCode(ok);
+    }
+
+    @And("Validate get single data invalid feedback id resource json schema")
+    public void validateGetSingleDataInvalidFeedbackIdResourceJsonSchema() {
+        File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_GET + "/GetInvalidJsonSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @Given("Get single data feedback with invalid id alphabet {string}")
+    public void getSingleDataFeedbackWithInvalidIdAlphabet(String id) {
+        feedbackAPI.setGetInvalidIdFeedback(id);
+    }
+
+    @Given("Get single data feedback with not registered id {int}")
+    public void getSingleDataFeedbackWithNotRegisteredId(int id) {
+        feedbackAPI.setGetIdFeedback(id);
+    }
 }
