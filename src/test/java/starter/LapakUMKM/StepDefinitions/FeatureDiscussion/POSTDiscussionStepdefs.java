@@ -19,7 +19,7 @@ public class POSTDiscussionStepdefs {
     @Given("Post create new data with request body valid id product and discussion")
     public void postCreateNewDataWithRequestBodyValidIdProductAndDiscussion() {
         File jsonReq = new File(ConstantDiscussion.JSON_REQ_BODY_POST + "/PostReqBody.json");
-
+        discussionAPI.setPostCreateDiscussion(jsonReq);
     }
 
     @When("Send post for create new data")
