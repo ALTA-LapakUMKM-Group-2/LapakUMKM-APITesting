@@ -9,10 +9,10 @@ import starter.LapakUMKM.Utils.Constant;
 public class LapakProductsApi {
     Faker faker = new Faker();
     String FIRSTNAME = faker.name().firstName();
-    public static  String TOKEN = "7bf93ec8d77c033e571a1dbcb59e5985a4297bcbb530efb8698d25b22919d782";
+    public static  String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJleHAiOjE2ODAxNDgxNjN9.m3adJyHrWwe-lKbbTp4a1le1cOcZtQjHj4kg04ryHZI";
     public static String GET_LIST_PRODUCTS = Constant.BASE_URL + "/{products}";
     public static String GET_LIST_PRODUCTS_ID = Constant.BASE_URL + "/products/{id}";
-    public static String GET_LIST_TODOS = Constant.BASE_URL + "/{todos}";
+    public static String GET_LIST_PRODUCTS_IMAGE = Constant.BASE_URL + "/products/{id}/images";
     public static String GET_SINGLE_USER = Constant.BASE_URL + "/users/{id}";
     public static String POST_CREATE_USER = Constant.BASE_URL + "/{post}/";
     public static String USERS  = Constant.BASE_URL + "/users/";
@@ -27,6 +27,13 @@ public class LapakProductsApi {
     @Step("Get list product by id")
     public void setGetListProductsId(int id) {
         SerenityRest.given()
+                .pathParam("id", id);
+    }
+
+    @Step("Get list product image")
+    public void setGetListProductsImage(int id) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
                 .pathParam("id", id);
     }
 

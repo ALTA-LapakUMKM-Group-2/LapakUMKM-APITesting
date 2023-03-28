@@ -80,8 +80,42 @@ public class ProductsGetStepdefs {
 
     @And("Validate get product by id invalid parameter product resources json schema")
     public void validateGetProductByIdInvalidParameterProductResourcesJsonSchema() {
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetProducstIdInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
     }
 
+    @Given("Get image by product id {int} valid parameter")
+    public void getImageByProductIdValidParameter(int arg0) {
+        lapakProductsApi.setGetListProductsImage(arg0);
+    }
+
+    @When("Send get image by products id parameter")
+    public void sendGetImageByProductsIdParameter() {
+        SerenityRest.when().get(lapakProductsApi.GET_LIST_PRODUCTS_IMAGE);
+
+    }
+
+    @And("Validate image by products resources json schema")
+    public void validateImageByProductsResourcesJsonSchema() {
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetProductImageValid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
+    }
+
+    @Given("Get image by product id invalid parameter id {int}")
+    public void getImageByProductIdInvalidParameterIdId(int arg0) {
+        lapakProductsApi.setGetListProductsImage(arg0);
+    }
+
+    @When("Send get image product by id parameter")
+    public void sendGetImageProductByIdParameter() {
+        SerenityRest.when().get(lapakProductsApi.GET_LIST_PRODUCTS_IMAGE);
+    }
+
+    @And("Validate get image product by id invalid parameter product resources json schema")
+    public void validateGetImageProductByIdInvalidParameterProductResourcesJsonSchema() {
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetProductsImageInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
+    }
 }
 
 
