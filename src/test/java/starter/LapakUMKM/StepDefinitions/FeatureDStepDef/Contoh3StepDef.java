@@ -6,7 +6,7 @@
 //import io.cucumber.java.en.When;
 //import net.serenitybdd.rest.SerenityRest;
 //import net.thucydides.core.annotations.Steps;
-//import starter.LapakUMKM.LapakAPI;
+//import starter.LapakUMKM.CategoryAPI;
 //import starter.LapakUMKM.Utils.Constant;
 //import java.io.File;
 //
@@ -14,15 +14,15 @@
 //
 //public class Contoh3StepDef {
 //    @Steps
-//    LapakAPI lapakAPI;
+//    CategoryAPI categoryAPI;
 //    @Given("Get list user with valid parameter")
 //    public void getListUserWithValidParameter() {
-//        lapakAPI.getListUsers("users");
+//        categoryAPI.getListUsers("users");
 //    }
 //
 //    @When("Send get list user parameter")
 //    public void sendGetListUserParameter() {
-//        SerenityRest.when().get(lapakAPI.GET_LIST_USERS);
+//        SerenityRest.when().get(categoryAPI.GET_LIST_USERS);
 //    }
 //
 ////    @Then("Status code should be {int} OK")
@@ -38,16 +38,16 @@
 //
 //    @Given("Get list user with page {int} valid parameter")
 //    public void getListUserWithPageIdValidParameter(int id) {
-//        lapakAPI.setGetListUsersPage(id);
+//        categoryAPI.setGetListUsersPage(id);
 //    }
 //    @When("Send get list user parameter page")
 //    public void sendGetListUserParameterPage() {
-//        SerenityRest.when().get(lapakAPI.GET_LIST_USERS_PAGE);
+//        SerenityRest.when().get(categoryAPI.GET_LIST_USERS_PAGE);
 //    }
 //
 //    @Given("Get list user invalid parameter {string}")
 //    public void getListUserInvalidParameter(String users) {
-//        lapakAPI.getListUsers(users);
+//        categoryAPI.getListUsers(users);
 //    }
 //
 //    @Then("Status code should be {int} Not Found")
@@ -57,6 +57,6 @@
 //
 //    @Given("Get list user invalid page parameter {int}")
 //    public void getListUserInvalidPageParameterId(int id) {
-//        lapakAPI.setGetListUsersPage(id);
+//        categoryAPI.setGetListUsersPage(id);
 //    }
 //}

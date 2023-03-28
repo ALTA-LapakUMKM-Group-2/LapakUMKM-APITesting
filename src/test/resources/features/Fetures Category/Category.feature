@@ -1,6 +1,6 @@
-@category
 Feature: Feature Category
 
+  @category
   Scenario: Get list data Categories
     Given Get list data categories
     When  Send get list data

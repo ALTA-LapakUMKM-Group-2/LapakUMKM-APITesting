@@ -7,21 +7,22 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.LapakUMKM.LapakAPI;
+import starter.LapakUMKM.CategoryAPI;
 import starter.LapakUMKM.Utils.Constant;
 
 import java.io.File;
 
 public class CategoryStepdefs {
     @Steps
-    LapakAPI lapakAPI;
+    CategoryAPI categoryAPI;
 
     @Given("Get list data categories")
-    public void getListDataCategories() {lapakAPI.getListCategories();}
+    public void getListDataCategories() {
+        categoryAPI.getListCategories();}
 
     @When("Send get list data")
     public void sendGetListData() {
-        SerenityRest.when().get(LapakAPI.GET_LIST_CATEGORIES);
+        SerenityRest.when().get(CategoryAPI.GET_LIST_CATEGORIES);
     }
 
     @Then("Status code should be {int} OK")

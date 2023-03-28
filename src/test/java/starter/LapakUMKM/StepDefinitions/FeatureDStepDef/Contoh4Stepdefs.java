@@ -7,26 +7,26 @@
 //import io.restassured.module.jsv.JsonSchemaValidator;
 //import net.serenitybdd.rest.SerenityRest;
 //import net.thucydides.core.annotations.Steps;
-//import starter.LapakUMKM.LapakAPI;
+//import starter.LapakUMKM.CategoryAPI;
 //import starter.LapakUMKM.LapakResponses;
 //import starter.LapakUMKM.Utils.Constant;
 //
 //import java.io.File;
 //
 //import static org.hamcrest.CoreMatchers.equalTo;
-//import static starter.LapakUMKM.LapakAPI.TOKEN;
+//import static starter.LapakUMKM.CategoryAPI.TOKEN;
 //
 //public class Contoh4Stepdefs {
 //    @Steps
-//    LapakAPI lapakAPI;
+//    CategoryAPI categoryAPI;
 //    @Given("Post create new user valid paramater and json with auth token")
 //    public void postCreateNewUserValidParamaterAndJsonWithAuthToken() {
-//        lapakAPI.setPostCreateUser("users");
+//        categoryAPI.setPostCreateUser("users");
 //    }
 //
 //    @When("Send post create new user parameter")
 //    public void sendPostCreateNewUserParameter() {
-//        SerenityRest.when().post(lapakAPI.POST_CREATE_USER);
+//        SerenityRest.when().post(categoryAPI.POST_CREATE_USER);
 //    }
 //
 //    @Then("Status code should be {int} Created")
@@ -51,7 +51,7 @@
 //
 //    @Given("Post create new user valid parameter and json without auth token")
 //    public void postCreateNewUserValidParameterAndJsonWithoutAuthToken() {
-//     lapakAPI.setPostCreateUserNoAuth("users");
+//     categoryAPI.setPostCreateUserNoAuth("users");
 //    }
 //
 //    @Then("Status code should be {int} Unauthorized")
@@ -73,7 +73,7 @@
 //
 //    @Given("Post create new user valid parameter and empty name json with auth token")
 //    public void postCreateNewUserValidParameterAndEmptyNameJsonWithAuthToken() {
-//        lapakAPI.setPostCreateUserNoName("users");
+//        categoryAPI.setPostCreateUserNoName("users");
 //    }
 //
 //    @Then("Status code should be {int} Unprocessable Entity")
@@ -89,7 +89,7 @@
 //
 //    @Given("Post create new user valid parameter and empty email json with auth token")
 //    public void postCreateNewUserValidParameterAndEmptyEmailJsonWithAuthToken() {
-//        lapakAPI.setPostCreateUserNoEmail("users");
+//        categoryAPI.setPostCreateUserNoEmail("users");
 //    }
 //
 //    @And("Respons body should be field {string} message {string}")
@@ -107,7 +107,7 @@
 //
 //    @Given("Post create new user valid parameter and empty gender json with auth token")
 //    public void postCreateNewUserValidParameterAndEmptyGenderJsonWithAuthToken() {
-//        lapakAPI.setPostCreateUserNoGender("users");
+//        categoryAPI.setPostCreateUserNoGender("users");
 //    }
 //
 //    @And("Validate post create new user empty gender resources json schema")
@@ -118,7 +118,7 @@
 //
 //    @Given("Post create new user valid parameter and empty status json with auth token")
 //    public void postCreateNewUserValidParameterAndEmptyStatusJsonWithAuthToken() {
-//        lapakAPI.setPostCreateUserNostatus("users");
+//        categoryAPI.setPostCreateUserNostatus("users");
 //    }
 //
 //    @And("Validate post create new user empty status resources json schema")
@@ -129,7 +129,7 @@
 //
 //    @Given("Post create new user invalid parameter {string} with auth token")
 //    public void postCreateNewUserInvalidParameterWithAuthToken(String users) {
-//        lapakAPI.setPostCreateUser(users);
+//        categoryAPI.setPostCreateUser(users);
 //    }
 //
 //    @Given("Post create new user valid paramater and json with email registered")
@@ -150,6 +150,6 @@
 //
 //    @When("Send post create new userr parameter")
 //    public void sendPostCreateNewUserrParameter() {
-//        SerenityRest.when().post(lapakAPI.USERS);
+//        SerenityRest.when().post(categoryAPI.USERS);
 //    }
 //}
