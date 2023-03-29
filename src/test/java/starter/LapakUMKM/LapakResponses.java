@@ -1,8 +1,8 @@
 package starter.LapakUMKM;
 
 public class LapakResponses {
-    public static String DELETE_ID = "data.id[0]";
-    public static String IMAGE_ID = "data.product_image[0].id[0]";
+    public static String DELETE_ID = "data.id[1]";
+    public static String IMAGE_ID = "data.product_image[1].id[0]";
 
     public static String MESSAGE = "message";
     public static String NAME = "name";
