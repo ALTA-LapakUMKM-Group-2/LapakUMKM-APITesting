@@ -1,13 +1,16 @@
-package starter.LapakUMKM.StepDefinitions.FeatureAStepDef;
+package starter.LapakUMKM.StepDefinitions.FeatureProductsStepDef;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.LapakUMKM.LapakProductsApi;
+import starter.LapakUMKM.LapakResponses;
 import starter.LapakUMKM.Utils.Constant;
 
 import java.io.File;
@@ -15,9 +18,12 @@ import java.io.File;
 public class ProductPostPutStepdefs {
     @Steps
     LapakProductsApi lapakProductsApi;
+    LapakResponses lapakResponses;
+
     @Given("Post create product valid json request body with auth token")
     public void postCreateProductValidJsonRequestBodyWithAuthToken() {
-        lapakProductsApi.setPostCreateProducts("products");
+        File image = new File(Constant.UPLOAD_IMAGE + "img.png");
+        lapakProductsApi.setPostCreateProducts("products",image);
 
     }
 
@@ -88,7 +94,7 @@ public class ProductPostPutStepdefs {
 
     @And("Validate create product with invalid parameter resources json schema")
     public void validateCreateProductWithInvalidParameterResourcesJsonSchema() {
-        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostInvalidParameter.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
     }
 
@@ -175,7 +181,10 @@ public class ProductPostPutStepdefs {
 
     @Given("PUT update a product valid json request body")
     public void putUpdateAProductValidJsonRequestBody() {
-        lapakProductsApi.setPutUpdateDataProducts(10);
+        Response response = SerenityRest.get(lapakProductsApi.DELETE_PRODUCTS_GET);
+        JsonPath jsonPath= response.jsonPath();
+        int id = jsonPath.get(lapakResponses.DELETE_ID);
+        lapakProductsApi.setPutUpdateDataProducts(id);
         
     }
 
@@ -186,7 +195,7 @@ public class ProductPostPutStepdefs {
 
     @And("Validate update a product valid resources json schema")
     public void validateUpdateAProductValidResourcesJsonSchema() {
-        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PutUpdateProduct.feature");
+        File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PutUpdateValid.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaProducts));
     }
 
@@ -203,7 +212,10 @@ public class ProductPostPutStepdefs {
 
     @Given("PUT update a product without json request body")
     public void putUpdateAProductWithoutJsonRequestBody() {
-        lapakProductsApi.setPutUpdateDataProductsWithoutReqJson(10);
+        Response response = SerenityRest.get(lapakProductsApi.DELETE_PRODUCTS_GET);
+        JsonPath jsonPath= response.jsonPath();
+        int id = jsonPath.get(lapakResponses.DELETE_ID);
+        lapakProductsApi.setPutUpdateDataProductsWithoutReqJson(id);
     }
 
     @And("Validate update a product without req body resources json schema")
@@ -214,7 +226,10 @@ public class ProductPostPutStepdefs {
 
     @Given("PUT update a product invalid json request body")
     public void putUpdateAProductInvalidJsonRequestBody() {
-        lapakProductsApi.setPutUpdateDataProductsInvalidJsonReq(10);
+        Response response = SerenityRest.get(lapakProductsApi.DELETE_PRODUCTS_GET);
+        JsonPath jsonPath= response.jsonPath();
+        int id = jsonPath.get(lapakResponses.DELETE_ID);
+        lapakProductsApi.setPutUpdateDataProductsInvalidJsonReq(id);
     }
 
     @And("Validate update a product invalid req body resources json schema")

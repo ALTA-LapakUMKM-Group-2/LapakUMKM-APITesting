@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/Welcome6",
+  "$ref": "#/definitions/Welcome10",
   "definitions": {
-    "Welcome6": {
+    "Welcome10": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -21,7 +21,7 @@
         "message",
         "status"
       ],
-      "title": "Welcome6"
+      "title": "Welcome10"
     },
     "Data": {
       "type": "object",
@@ -51,9 +51,6 @@
         "stock_remaining": {
           "type": "integer"
         },
-        "stock_sold": {
-          "type": "integer"
-        },
         "user": {
           "$ref": "#/definitions/User"
         },
@@ -61,10 +58,10 @@
           "$ref": "#/definitions/Category"
         },
         "product_image": {
-          "type": "null"
-        },
-        "rating": {
-          "type": "integer"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductImage"
+          }
         }
       },
       "required": [
@@ -75,10 +72,8 @@
         "price",
         "product_image",
         "product_name",
-        "rating",
         "size",
         "stock_remaining",
-        "stock_sold",
         "user",
         "user_id"
       ],
@@ -97,20 +92,14 @@
       ],
       "title": "Category"
     },
-    "User": {
+    "ProductImage": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "full_name": {
-          "type": "string"
+        "id": {
+          "type": "integer"
         },
-        "address": {
-          "type": "string"
-        },
-        "shop_name": {
-          "type": "string"
-        },
-        "photo_profile": {
+        "image": {
           "type": "string",
           "format": "uri",
           "qt-uri-protocols": [
@@ -122,10 +111,25 @@
         }
       },
       "required": [
-        "address",
+        "id",
+        "image"
+      ],
+      "title": "ProductImage"
+    },
+    "User": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "full_name": {
+          "type": "string"
+        },
+        "photo_profile": {
+          "type": "string"
+        }
+      },
+      "required": [
         "full_name",
-        "photo_profile",
-        "shop_name"
+        "photo_profile"
       ],
       "title": "User"
     }

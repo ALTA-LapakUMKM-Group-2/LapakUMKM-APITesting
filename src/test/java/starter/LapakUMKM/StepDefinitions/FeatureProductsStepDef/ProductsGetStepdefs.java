@@ -1,4 +1,4 @@
-package starter.LapakUMKM.StepDefinitions.FeatureAStepDef;
+package starter.LapakUMKM.StepDefinitions.FeatureProductsStepDef;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -116,6 +116,65 @@ public class ProductsGetStepdefs {
         File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetProductsImageInvalid.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
     }
+
+    @Given("Get product by user id with valid parameter")
+    public void getProductByUserIdWithValidParameter() {
+        lapakProductsApi.setGetProductByUser(2);
+    }
+
+
+    @When("Send get product by user id parameter")
+    public void sendGetProductByUserIdParameter() {
+    SerenityRest.when().get(lapakProductsApi.GET_BYUSER);
+
+    }
+
+
+    @And("Validate product by user id parameter product resources json schema")
+    public void validateProductByUserIdParameterProductResourcesJsonSchema() {
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetProductByUser.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
+    }
+
+    @Given("Get product  by user id  with invalid parameter")
+    public void getProductByUserIdWithInvalidParameter() {
+        lapakProductsApi.setGetProductByUser(808);
+    }
+
+    @And("Validate product by user id invalid parameter product resources json schema")
+    public void validateProductByUserIdInvalidParameterProductResourcesJsonSchema() {
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetProductsImageInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
+
+    }
+
+    @Given("Get product by category with valid parameter")
+    public void getProductByCategoryWithValidParameter() {
+        lapakProductsApi.setGetProductByCategory(2);
+
+    }
+
+    @When("Send get product by category parameter")
+    public void sendGetProductByCategoryParameter() {
+        SerenityRest.when().get(lapakProductsApi.GET_BY_CATEGORY);
+
+    }
+
+    @And("Validate product by category  parameter product resources json schema")
+    public void validateProductByCategoryParameterProductResourcesJsonSchema() {
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetProductByUser.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
+    }
+
+    @Given("Get product by category with invalid parameter")
+    public void getProductByCategoryWithInvalidParameter() {
+        lapakProductsApi.setGetProductByCategory(101);
+
+    }
+
+    @And("Validate product by category invalid parameter product resources json schema")
+    public void validateProductByCategoryInvalidParameterProductResourcesJsonSchema() {
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetProductsImageInvalid.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
+    }
 }
-
-

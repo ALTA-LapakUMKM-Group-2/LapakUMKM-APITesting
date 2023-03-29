@@ -11,16 +11,53 @@ import java.io.File;
 public class LapakProductsApi {
     Faker faker = new Faker();
     String FIRSTNAME = faker.name().firstName();
-    public static  String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJleHAiOjE2ODAyNzg3OTJ9.NyaxmcMOpr-tUvASkbhPS9XLJRwuSI8_YZyAuaWHCgI";
+    public static  String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJleHAiOjE2ODAxNDgxNjN9.m3adJyHrWwe-lKbbTp4a1le1cOcZtQjHj4kg04ryHZI";
     public static String GET_LIST_PRODUCTS = Constant.BASE_URL + "/{products}";
     public static String GET_LIST_PRODUCTS_ID = Constant.BASE_URL + "/products/{id}";
     public static String GET_LIST_PRODUCTS_IMAGE = Constant.BASE_URL + "/products/{id}/images";
     public static String POST_CREATE_PRODUCTS = Constant.BASE_URL + "/{products}";
     public static String POST_ADD_IMAGE = Constant.BASE_URL + "/products/{id}/upload-photo";
-    public static String DELETE_PRODUCTS_GET = Constant.BASE_URL + "/products?user_id=1";
+    public static String DELETE_PRODUCTS_GET = Constant.BASE_URL + "/products?user_id=2";
+    public static String GET_BYUSER = Constant.BASE_URL + "/products?user_id={id}";
+    public static String GET_BY_CATEGORY = Constant.BASE_URL + "/products?category_id={id}";
     public static String DELETE_PRODUCTS = Constant.BASE_URL + "/products/{id}";
+    public static String DELETE_PRODUCTS_IMAGE = Constant.BASE_URL + "/products/{id1}/delete-photo/{id2}";
 
+    @Step("Get product by category")
+    public void setGetProductByCategory(int id) {
+        SerenityRest.given()
+                .pathParam("id", id);
 
+    }
+
+    @Step("Get product by user")
+    public void setGetProductByUser(int id) {
+        SerenityRest.given()
+                .pathParam("id", id);
+
+    }
+
+    @Step("Delete product image without auth token")
+    public void setDeleteProductsImageWithoutToken(int id , int id2) {
+        SerenityRest.given()
+                .pathParam("id1", id)
+                .pathParam("id2",id2);
+    }
+
+    @Step("Delete product image invalid parameter")
+    public void setDeleteProductsImageInvalidParameter(int id , int id2) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id1", id)
+                .pathParam("id2",id2);
+    }
+    @Step("Delete product image")
+    public void setDeleteProductsImage(int id , int id2) {
+        SerenityRest.given()
+                .header("Authorization","Bearer "+TOKEN)
+                .pathParam("id1", id)
+                .pathParam("id2",id2);
+    }
     @Step("Delete product without auth")
     public void setDeleteProductsWithoutAuth(int id) {
         SerenityRest.given()
@@ -110,7 +147,7 @@ public class LapakProductsApi {
         }
 
         @Step("POST create products")
-    public void setPostCreateProducts(String products) {
+    public void setPostCreateProducts(String products,File image) {
         SerenityRest.given()
                 .header("Authorization","Bearer "+TOKEN)
                 .pathParam("products", products)
@@ -147,7 +184,8 @@ public class LapakProductsApi {
                         "HAPPY SHOPPING :)")
                 .multiPart("price", "120000")
                 .multiPart("stock_remaining", "100")
-                .multiPart("size", "42");
+                .multiPart("size", "42")
+                .multiPart("photo_product", image);
     }
 
     @Step("post create products without auth token")

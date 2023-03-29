@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/Welcome7",
+  "$ref": "#/definitions/Welcome1",
   "definitions": {
-    "Welcome7": {
+    "Welcome1": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -21,7 +21,7 @@
         "message",
         "status"
       ],
-      "title": "Welcome7"
+      "title": "Welcome1"
     },
     "Data": {
       "type": "object",
@@ -43,15 +43,13 @@
           "type": "string"
         },
         "size": {
-          "type": "string"
+          "type": "string",
+          "format": "integer"
         },
         "price": {
           "type": "integer"
         },
         "stock_remaining": {
-          "type": "integer"
-        },
-        "stock_sold": {
           "type": "integer"
         },
         "user": {
@@ -65,9 +63,6 @@
           "items": {
             "$ref": "#/definitions/ProductImage"
           }
-        },
-        "rating": {
-          "type": "integer"
         }
       },
       "required": [
@@ -78,10 +73,8 @@
         "price",
         "product_image",
         "product_name",
-        "rating",
         "size",
         "stock_remaining",
-        "stock_sold",
         "user",
         "user_id"
       ],
@@ -131,28 +124,13 @@
         "full_name": {
           "type": "string"
         },
-        "address": {
-          "type": "string"
-        },
-        "shop_name": {
-          "type": "string"
-        },
         "photo_profile": {
-          "type": "string",
-          "format": "uri",
-          "qt-uri-protocols": [
-            "https"
-          ],
-          "qt-uri-extensions": [
-            ".png"
-          ]
+          "type": "string"
         }
       },
       "required": [
-        "address",
         "full_name",
-        "photo_profile",
-        "shop_name"
+        "photo_profile"
       ],
       "title": "User"
     }

@@ -7,7 +7,10 @@
       "additionalProperties": false,
       "properties": {
         "data": {
-          "$ref": "#/definitions/Data"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Datum"
+          }
         },
         "message": {
           "type": "string"
@@ -23,7 +26,7 @@
       ],
       "title": "Welcome9"
     },
-    "Data": {
+    "Datum": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -77,7 +80,7 @@
         "user",
         "user_id"
       ],
-      "title": "Data"
+      "title": "Datum"
     },
     "Category": {
       "type": "object",
@@ -123,28 +126,13 @@
         "full_name": {
           "type": "string"
         },
-        "address": {
-          "type": "string"
-        },
-        "shop_name": {
-          "type": "string"
-        },
         "photo_profile": {
-          "type": "string",
-          "format": "uri",
-          "qt-uri-protocols": [
-            "https"
-          ],
-          "qt-uri-extensions": [
-            ".png"
-          ]
+          "type": "string"
         }
       },
       "required": [
-        "address",
         "full_name",
-        "photo_profile",
-        "shop_name"
+        "photo_profile"
       ],
       "title": "User"
     }
