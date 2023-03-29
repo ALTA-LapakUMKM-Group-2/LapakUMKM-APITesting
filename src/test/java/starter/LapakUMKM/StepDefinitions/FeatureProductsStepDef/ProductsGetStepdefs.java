@@ -162,7 +162,7 @@ public class ProductsGetStepdefs {
 
     @And("Validate product by category  parameter product resources json schema")
     public void validateProductByCategoryParameterProductResourcesJsonSchema() {
-        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetProductByUser.json");
+        File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetProductByCategory.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
     }
 
