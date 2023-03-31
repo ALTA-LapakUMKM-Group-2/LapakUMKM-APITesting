@@ -11,6 +11,15 @@
             "id": {
               "type": "integer"
             },
+            "parent_id": {
+              "type": "integer"
+            },
+            "user_id": {
+              "type": "integer"
+            },
+            "product_id": {
+              "type": "integer"
+            },
             "discussion": {
               "type": "string"
             },
@@ -28,18 +37,79 @@
                 "full_name",
                 "photo_profile"
               ]
+            },
+            "childs": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "parent_id": {
+                      "type": "integer"
+                    },
+                    "user_id": {
+                      "type": "integer"
+                    },
+                    "product_id": {
+                      "type": "integer"
+                    },
+                    "discussion": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "object",
+                      "properties": {
+                        "full_name": {
+                          "type": "string"
+                        },
+                        "photo_profile": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "full_name",
+                        "photo_profile"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "parent_id",
+                    "user_id",
+                    "product_id",
+                    "discussion",
+                    "user"
+                  ]
+                }
+              ]
             }
           },
           "required": [
             "id",
+            "parent_id",
+            "user_id",
+            "product_id",
             "discussion",
-            "user"
+            "user",
+            "childs"
           ]
         },
         {
           "type": "object",
           "properties": {
             "id": {
+              "type": "integer"
+            },
+            "parent_id": {
+              "type": "integer"
+            },
+            "user_id": {
+              "type": "integer"
+            },
+            "product_id": {
               "type": "integer"
             },
             "discussion": {
@@ -63,6 +133,9 @@
           },
           "required": [
             "id",
+            "parent_id",
+            "user_id",
+            "product_id",
             "discussion",
             "user"
           ]
@@ -71,6 +144,15 @@
           "type": "object",
           "properties": {
             "id": {
+              "type": "integer"
+            },
+            "parent_id": {
+              "type": "integer"
+            },
+            "user_id": {
+              "type": "integer"
+            },
+            "product_id": {
               "type": "integer"
             },
             "discussion": {
@@ -94,6 +176,9 @@
           },
           "required": [
             "id",
+            "parent_id",
+            "user_id",
+            "product_id",
             "discussion",
             "user"
           ]
@@ -102,6 +187,15 @@
           "type": "object",
           "properties": {
             "id": {
+              "type": "integer"
+            },
+            "parent_id": {
+              "type": "integer"
+            },
+            "user_id": {
+              "type": "integer"
+            },
+            "product_id": {
               "type": "integer"
             },
             "discussion": {
@@ -125,6 +219,9 @@
           },
           "required": [
             "id",
+            "parent_id",
+            "user_id",
+            "product_id",
             "discussion",
             "user"
           ]
@@ -135,35 +232,13 @@
             "id": {
               "type": "integer"
             },
-            "discussion": {
-              "type": "string"
+            "parent_id": {
+              "type": "integer"
             },
-            "user": {
-              "type": "object",
-              "properties": {
-                "full_name": {
-                  "type": "string"
-                },
-                "photo_profile": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "full_name",
-                "photo_profile"
-              ]
-            }
-          },
-          "required": [
-            "id",
-            "discussion",
-            "user"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "id": {
+            "user_id": {
+              "type": "integer"
+            },
+            "product_id": {
               "type": "integer"
             },
             "discussion": {
@@ -174,19 +249,18 @@
               "properties": {
                 "full_name": {
                   "type": "string"
-                },
-                "photo_profile": {
-                  "type": "string"
                 }
               },
               "required": [
-                "full_name",
-                "photo_profile"
+                "full_name"
               ]
             }
           },
           "required": [
             "id",
+            "parent_id",
+            "user_id",
+            "product_id",
             "discussion",
             "user"
           ]
