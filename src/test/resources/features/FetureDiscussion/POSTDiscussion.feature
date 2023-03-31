@@ -7,7 +7,7 @@ Feature: POST Create new discussion data
     Then Status code should be 201 Created
     And Validate post create new data resources json schema
 
-  @Team2 @Discussion @Positive
+  @Team2 @Discussion @Negative
   Scenario: Post Create new data with parent id  is blank
     Given Post create new data with request body parent id is blank
     When Send post for create new data

@@ -8,6 +8,15 @@
         "id": {
           "type": "integer"
         },
+        "parent_id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "product_id": {
+          "type": "integer"
+        },
         "discussion": {
           "type": "string"
         },
@@ -16,19 +25,18 @@
           "properties": {
             "full_name": {
               "type": "string"
-            },
-            "photo_profile": {
-              "type": "string"
             }
           },
           "required": [
-            "full_name",
-            "photo_profile"
+            "full_name"
           ]
         }
       },
       "required": [
         "id",
+        "parent_id",
+        "user_id",
+        "product_id",
         "discussion",
         "user"
       ]
