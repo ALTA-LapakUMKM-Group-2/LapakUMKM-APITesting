@@ -1,8 +1,8 @@
-Feature: Todos Delete Id API Automation Testing
+Feature: Delete user
 
   @Team2 @Feedback @Positive
-  Scenario: Delete user with valid parameter
-    Given Get data feedback from product id  with valid id 27
+  Scenario:  with valid parameter
+    Given Get data feedback from product id  with valid id 4
     When  Send Get data feedback from product
     Then Status code should be 200 OK
     And Validate feedback from product resource json schema
