@@ -1,7 +1,8 @@
 {
-  "product_id": 27,
+  "product_id": 4,
   "parent_id": 0,
-  "transaction_id": 1,
+  "product_transaction_detail_id": 12,
+  "user_id": 1,
   "rating": 3,
   "feedback": "harga murah kualitas yaa"
 }

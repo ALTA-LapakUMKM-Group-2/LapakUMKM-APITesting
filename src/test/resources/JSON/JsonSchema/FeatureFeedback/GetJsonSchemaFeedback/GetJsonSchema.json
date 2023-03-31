@@ -14,7 +14,7 @@
             "parent_id": {
               "type": "integer"
             },
-            "transaction_id": {
+            "product_transaction_detail_id": {
               "type": "integer"
             },
             "product_id": {
@@ -31,21 +31,17 @@
               "properties": {
                 "full_name": {
                   "type": "string"
-                },
-                "photo_profile": {
-                  "type": "string"
                 }
               },
               "required": [
-                "full_name",
-                "photo_profile"
+                "full_name"
               ]
             }
           },
           "required": [
             "id",
             "parent_id",
-            "transaction_id",
+            "product_transaction_detail_id",
             "product_id",
             "rating",
             "feedback",
@@ -61,7 +57,7 @@
             "parent_id": {
               "type": "integer"
             },
-            "transaction_id": {
+            "product_transaction_detail_id": {
               "type": "integer"
             },
             "product_id": {
@@ -78,21 +74,17 @@
               "properties": {
                 "full_name": {
                   "type": "string"
-                },
-                "photo_profile": {
-                  "type": "string"
                 }
               },
               "required": [
-                "full_name",
-                "photo_profile"
+                "full_name"
               ]
             }
           },
           "required": [
             "id",
             "parent_id",
-            "transaction_id",
+            "product_transaction_detail_id",
             "product_id",
             "rating",
             "feedback",
@@ -108,7 +100,7 @@
             "parent_id": {
               "type": "integer"
             },
-            "transaction_id": {
+            "product_transaction_detail_id": {
               "type": "integer"
             },
             "product_id": {
@@ -125,21 +117,17 @@
               "properties": {
                 "full_name": {
                   "type": "string"
-                },
-                "photo_profile": {
-                  "type": "string"
                 }
               },
               "required": [
-                "full_name",
-                "photo_profile"
+                "full_name"
               ]
             }
           },
           "required": [
             "id",
             "parent_id",
-            "transaction_id",
+            "product_transaction_detail_id",
             "product_id",
             "rating",
             "feedback",
