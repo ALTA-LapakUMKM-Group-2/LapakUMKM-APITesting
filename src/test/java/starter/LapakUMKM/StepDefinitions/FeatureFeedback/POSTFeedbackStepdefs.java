@@ -44,10 +44,10 @@ public class POSTFeedbackStepdefs {
         feedbackAPI.setPostCreateFeedback(jsonReq);
     }
 
-    @Then("Status code should be {int} Bad Request")
-    public void statusCodeShouldBeBadRequest(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
+//    @Then("Status code should be {int} Bad Request")
+//    public void statusCodeShouldBeBadRequest(int ok) {
+//        SerenityRest.then().statusCode(ok);
+//    }
 
     @And("Validate post invalid create new data resources json schema")
     public void validatePostInvalidCreateNewDataResourcesJsonSchema() {

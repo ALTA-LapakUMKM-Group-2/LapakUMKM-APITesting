@@ -27,10 +27,10 @@ public class GETFeedbackStepdefs {
         SerenityRest.when().get(FeedbackAPI.GET_LIST_FEEDBACK);
     }
 
-    @Then("Status code should be {int} OK")
-    public void statusCodeShouldBeOK(int oke) {
-        SerenityRest.then().statusCode(oke);
-    }
+//    @Then("Status code should be {int} OK")
+//    public void statusCodeShouldBeOK(int oke) {
+//        SerenityRest.then().statusCode(oke);
+//    }
 
     @And("Validate get list data resource json schema")
     public void validateGetListDataResourceJsonSchema() {
@@ -59,10 +59,10 @@ public class GETFeedbackStepdefs {
         feedbackAPI.setGetInvalidIdFeedback(id);
     }
 
-    @Then("Status code should be {int} Not Found")
-    public void statusCodeShouldBeNotFound(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
+//    @Then("Status code should be {int} Not Found")
+//    public void statusCodeShouldBeNotFound(int ok) {
+//        SerenityRest.then().statusCode(ok);
+//    }
 
     @And("Validate get single data invalid feedback id resource json schema")
     public void validateGetSingleDataInvalidFeedbackIdResourceJsonSchema() {
