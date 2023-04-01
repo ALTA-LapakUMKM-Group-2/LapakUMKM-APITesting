@@ -1,9 +1,7 @@
 package starter.LapakUMKM;
-import com.github.javafaker.Faker;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
-import org.checkerframework.checker.units.qual.C;
 import starter.LapakUMKM.Utils.ConstantDiscussion;
 
 import java.io.File;

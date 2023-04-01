@@ -2,7 +2,6 @@ package starter.LapakUMKM.StepDefinitions.FeatureDiscussion;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
@@ -26,11 +25,6 @@ public class POSTDiscussionStepdefs {
     public void sendPostForCreateNewData() {
         SerenityRest.when().post(discussionAPI.POST_CREATE_DISCUSSION);
     }
-
-//    @Then("Status code should be {int} Created")
-//    public void statusCodeShouldBeCreated(int oke) {
-//        SerenityRest.then().statusCode(oke);
-//    }
 
     @And("Validate post create new data resources json schema")
     public void validatePostCreateNewDataResourcesJsonSchema() {
