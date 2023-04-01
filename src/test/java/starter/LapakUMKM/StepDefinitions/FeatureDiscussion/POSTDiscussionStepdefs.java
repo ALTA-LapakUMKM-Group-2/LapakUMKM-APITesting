@@ -27,11 +27,6 @@ public class POSTDiscussionStepdefs {
         SerenityRest.when().post(discussionAPI.POST_CREATE_DISCUSSION);
     }
 
-//    @Then("Status code should be {int} Created")
-//    public void statusCodeShouldBeCreated(int oke) {
-//        SerenityRest.then().statusCode(oke);
-//    }
-
     @And("Validate post create new data resources json schema")
     public void validatePostCreateNewDataResourcesJsonSchema() {
         File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_POST + "/PostJsonSchema.json");

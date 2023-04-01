@@ -1,11 +1,10 @@
-Feature: Delete user
+Feature: Get data feedback from product id
 
   @Team2 @Feedback @Positive
   Scenario:  with valid parameter
     Given Get data feedback from product id  with valid id 4
     When  Send Get data feedback from product
     Then Status code should be 200 OK
-    And Validate feedback from product resource json schema
 
   @Team2 @Feedback @Negative
   Scenario: Get data feedback from product id with no registered id

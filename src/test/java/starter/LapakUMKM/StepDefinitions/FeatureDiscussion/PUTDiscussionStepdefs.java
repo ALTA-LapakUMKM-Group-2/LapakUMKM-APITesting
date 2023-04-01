@@ -21,7 +21,7 @@ public class PUTDiscussionStepdefs {
         discussionAPI.setPutUpdateDiscussion(id, jsonReq);
     }
 
-    @When("Send put update data")
+    @When("Send put update data discussion")
     public void sendPutUpdateData() {
         SerenityRest.when().put(DiscussionAPI.PUT_UPDATE_DISCUSSION);
     }

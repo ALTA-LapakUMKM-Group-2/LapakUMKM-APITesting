@@ -9,6 +9,7 @@ import net.thucydides.core.annotations.Steps;
 import starter.LapakUMKM.DiscussionAPI;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import starter.LapakUMKM.Utils.ConstantDiscussion;
+import starter.LapakUMKM.Utils.ConstantFeedback;
 
 import java.io.File;
 
@@ -27,11 +28,6 @@ public class GETDiscussionStepdefs {
         SerenityRest.when().get(DiscussionAPI.GET_LIST_DATA);
     }
 
-//    @Then("Status code should be {int} OK")
-//    public void statusCodeShouldBeOK(int ok) {
-//        SerenityRest.then().statusCode(ok);
-//    }
-
     @And("Validate get list data resource json schema")
     public void validateGetListDataResourceJsonSchema() {
         File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_GET + "/GetJsonSchema.json");
@@ -48,8 +44,8 @@ public class GETDiscussionStepdefs {
         SerenityRest.when().get(DiscussionAPI.GET_DISCUSSION);
     }
 
-    @And("Validate get single data resource json schema")
-    public void validateGetSingleDataResourceJsonSchema() {
+    @And("Validate get discussion single data resource json schema")
+    public void validateGetdiscussionSingleDataResourceJsonSchema() {
         File jsonSchema = new File(ConstantDiscussion.JSON_SCHEMA_GET + "/GetSingleJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
@@ -60,11 +56,6 @@ public class GETDiscussionStepdefs {
     public void getSingleDataDiscussionWithInvalidIdSpecialCharacter(String id) {
         discussionAPI.setGetInvalidDiscussion(id);
     }
-
-//    @Then("Status code should be {int} Not Found")
-//    public void statusCodeShouldBeNotFound(int ok) {
-//        SerenityRest.then().statusCode(ok);
-//    }
 
     @And("Validate get single data invalid id resource json schema")
     public void validateGetSingleDataInvalidIdResourceJsonSchema() {

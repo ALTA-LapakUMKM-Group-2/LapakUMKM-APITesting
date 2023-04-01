@@ -3,9 +3,9 @@ Feature: GET Feedback Data
   @Team2 @Feedback @Positive
   Scenario: Get list feedback data
     Given Get list data feedback
-    When  Send get list data
+    When  Send get list data feedback
     Then Status code should be 200 OK
-    And Validate get list data resource json schema
+    And Validate get list feedback data resource json schema
 
 
   @Team2 @Feedback @Positive
@@ -13,7 +13,7 @@ Feature: GET Feedback Data
     Given Get single data feedback with valid id 85
     When Send get single data feedback
     Then Status code should be 200 OK
-    And Validate get single data resource json schema
+    And Validate get feedback single data resource json schema
 
 
   @Team2 @Feedback @Negative
