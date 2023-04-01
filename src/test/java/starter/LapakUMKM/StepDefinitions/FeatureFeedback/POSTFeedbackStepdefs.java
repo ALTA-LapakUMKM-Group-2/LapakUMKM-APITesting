@@ -2,7 +2,6 @@ package starter.LapakUMKM.StepDefinitions.FeatureFeedback;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
@@ -22,47 +21,38 @@ public class POSTFeedbackStepdefs {
         feedbackAPI.setPostCreateFeedback(jsonReq);
     }
 
-    @When("Send post for create new data")
-    public void sendPostForCreateNewData() {
+    @When("Send post for create new data feedback")
+    public void sendPostForCreateNewDatafeedback() {
         SerenityRest.when().post(feedbackAPI.POST_CREATE_FEEDBACK);
     }
 
-    @Then("Status code should be {int} Created")
-    public void statusCodeShouldBeCreated(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
-
-    @And("Validate post create new data resources json schema")
+    @And("Validate post create feedback new data resources json schema")
     public void validatePostCreateNewDataResourcesJsonSchema() {
         File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_POST + "/PostJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 
-    @Given("Post create new data with request body parent id is blank")
-    public void postCreateNewDataWithRequestBodyParentIdIsBlank() {
+    @Given("Post create new data with request body parent id is blank feedback")
+    public void postCreateNewDataWithRequestBodyParentIdIsBlankfeedback() {
         File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostParentBlankFeedbackReqBody.json");
         feedbackAPI.setPostCreateFeedback(jsonReq);
     }
 
-//    @Then("Status code should be {int} Bad Request")
-//    public void statusCodeShouldBeBadRequest(int ok) {
-//        SerenityRest.then().statusCode(ok);
-//    }
 
-    @And("Validate post invalid create new data resources json schema")
-    public void validatePostInvalidCreateNewDataResourcesJsonSchema() {
+    @And("Validate post feedback invalid create new data resources json schema")
+    public void validatefeedbackPostInvalidCreateNewDataResourcesJsonSchema() {
         File jsonSchema = new File(ConstantFeedback.JSON_SCHEMA_POST +"/PostInvalidJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 
-    @Given("Post Create new data with request body invalid parent id")
-    public void postCreateNewDataWithRequestBodyInvalidParentId() {
+    @Given("Post Create new data with request body invalid parent id feedback")
+    public void postCreateNewDataWithRequestBodyInvalidParentIdfeedback() {
         File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostInvalidParentFeedbackReqBody.json");
         feedbackAPI.setPostCreateFeedback(jsonReq);
     }
 
-    @Given("Post Create new data with product id not registered")
-    public void postCreateNewDataWithProductIdNotRegistered() {
+    @Given("Post Create new data with product id not registered feedback")
+    public void postCreateNewDataWithProductIdNotRegisteredfeedback() {
         File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostInvalidParentFeedbackReqBody.json");
         feedbackAPI.setPostCreateFeedback(jsonReq);
     }
@@ -73,8 +63,8 @@ public class POSTFeedbackStepdefs {
         feedbackAPI.setPostCreateFeedback(jsonReq);
     }
 
-    @Given("Post Create new data with request body product id is blank")
-    public void postCreateNewDataWithRequestBodyProductIdIsBlank() {
+    @Given("Post Create new data with request body product id is blank feedback")
+    public void postCreateNewDataWithRequestBodyProductIdIsBlankfeedback() {
         File jsonReq = new File(ConstantFeedback.JSON_REQ_BODY_POST+"/PostProductIDBlankFeedbackReqBody.json");
         feedbackAPI.setPostCreateFeedback(jsonReq);
     }
