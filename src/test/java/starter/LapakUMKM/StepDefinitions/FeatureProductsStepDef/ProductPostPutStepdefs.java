@@ -11,6 +11,7 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.LapakUMKM.LapakProductsApi;
 import starter.LapakUMKM.LapakResponses;
+import starter.LapakUMKM.Utils.Constant;
 
 import java.io.File;
 
