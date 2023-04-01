@@ -1,9 +1,10 @@
+@Team2
 Feature: Feature Category
 
-  @category @get
+
   Scenario: Get list data Categories
     Given Get list data categories
-    When  Send get list data
+    When  Send get list category
     Then Status code should be 200 OK
     And Validate get list resources json schema
 

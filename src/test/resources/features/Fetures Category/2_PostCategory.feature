@@ -1,6 +1,7 @@
+@Team2
 Feature: Feature Category
 
-  @category @post
+
   Scenario: Post create new categories
     Given Post create new data with request body categories
     When Send create new categories

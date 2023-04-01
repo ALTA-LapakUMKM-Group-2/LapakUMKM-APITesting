@@ -26,11 +26,6 @@ public class PostCategoryStepdefs {
     public void sendCreateNewCategories() {SerenityRest.when().post(CategoryAPI.POST_CREATE_CATEGORY);
     }
 
-    @Then("Status code should be {int} Created")
-    public void statusCodeShouldBeCreated(int Created) {
-        SerenityRest.then().statusCode(Created);
-    }
-
     @And("Validate new categories resource json schema")
     public void validateNewCategoriesResourceJsonSchema(){
         File jsonSchemaNewCategoriesResources = new File(Constant.JSON_SCHEMA_POSTNEW +"CreateNewCategoryJSONSchema.json");
@@ -41,11 +36,6 @@ public class PostCategoryStepdefs {
     public void postCreateNewCategoriesEmptyValue() {
         File jsonReq = new File(Constant.JSON_REQ_BODY_POSTEMPTYVALUE + "/PostEmptyValueCategoryReqBody.json");
         categoryAPI.setGetPostCreateNewCategoriesEmptyValue(jsonReq);
-    }
-
-    @Then("Status code should be {int} Bad Request")
-    public void statusCodeShouldBeBadRequest(int badRequest) {
-        SerenityRest.then().statusCode(badRequest);
     }
 
     @Given("Post create new categories long value")

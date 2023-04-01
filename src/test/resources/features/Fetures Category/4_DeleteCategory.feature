@@ -1,6 +1,7 @@
+@Team2
 Feature: Feature Category
 
-  @category @delete
+
   Scenario: Delete Category With valid id
     Given Delete category with valid 20
     When Send delete category

@@ -22,7 +22,7 @@ public class GETDiscussionStepdefs {
     }
 
     @When("Send get list data")
-    public void sendGetListData() {
+    public void sendGetListtData() {
         SerenityRest.when().get(DiscussionAPI.GET_LIST_DATA);
     }
 
