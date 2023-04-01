@@ -1,6 +1,7 @@
+@Team2
 Feature: Feature Category
 
-  @category @put
+
   Scenario: Put update category with valid id
     Given Put update category with valid 20
     When  Send put update category

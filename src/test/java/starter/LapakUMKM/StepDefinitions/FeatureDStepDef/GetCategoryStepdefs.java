@@ -19,15 +19,11 @@ public class GetCategoryStepdefs {
     @Given("Get list data categories")
     public void getListDataCategories() { categoryAPI.getListCategories();}
 
-    @When("Send get list data")
-    public void sendGetListData() {
+    @When("Send get list category")
+    public void sendGetListCategory() {
         SerenityRest.when().get(CategoryAPI.GET_LIST_CATEGORIES);
     }
 
-    @Then("Status code should be {int} OK")
-    public void statusCodeShouldBeOK(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
 
     @And("Validate get list resources json schema")
     public void validateGetListResourcesJsonSchema(){
@@ -56,8 +52,4 @@ public class GetCategoryStepdefs {
         categoryAPI.setGetSingleDataCategoriesWithInvalidId(id);
     }
 
-    @Then("Status code should be {int} Not Found")
-    public void statusCodeShouldBeNotFound(int notFound) {
-        SerenityRest.then().statusCode(notFound);
-    }
 }
