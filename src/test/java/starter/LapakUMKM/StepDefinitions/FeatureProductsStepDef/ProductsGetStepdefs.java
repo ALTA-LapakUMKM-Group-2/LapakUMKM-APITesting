@@ -119,7 +119,7 @@ public class ProductsGetStepdefs {
 
     @Given("Get product by user id with valid parameter")
     public void getProductByUserIdWithValidParameter() {
-        lapakProductsApi.setGetProductByUser(2);
+        lapakProductsApi.setGetProductByUser(7);
     }
 
 

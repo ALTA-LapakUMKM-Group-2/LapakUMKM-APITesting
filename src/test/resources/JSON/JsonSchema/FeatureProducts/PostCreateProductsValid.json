@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/Welcome10",
+  "$ref": "#/definitions/Welcome5",
   "definitions": {
-    "Welcome10": {
+    "Welcome5": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -21,7 +21,7 @@
         "message",
         "status"
       ],
-      "title": "Welcome10"
+      "title": "Welcome5"
     },
     "Data": {
       "type": "object",
@@ -123,13 +123,13 @@
         "full_name": {
           "type": "string"
         },
-        "photo_profile": {
+        "address": {
           "type": "string"
         }
       },
       "required": [
-        "full_name",
-        "photo_profile"
+        "address",
+        "full_name"
       ],
       "title": "User"
     }
