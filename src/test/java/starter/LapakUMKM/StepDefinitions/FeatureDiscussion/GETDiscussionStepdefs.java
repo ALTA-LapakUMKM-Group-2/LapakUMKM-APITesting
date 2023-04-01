@@ -27,10 +27,10 @@ public class GETDiscussionStepdefs {
         SerenityRest.when().get(DiscussionAPI.GET_LIST_DATA);
     }
 
-    @Then("Status code should be {int} OK")
-    public void statusCodeShouldBeOK(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
+//    @Then("Status code should be {int} OK")
+//    public void statusCodeShouldBeOK(int ok) {
+//        SerenityRest.then().statusCode(ok);
+//    }
 
     @And("Validate get list data resource json schema")
     public void validateGetListDataResourceJsonSchema() {
@@ -61,10 +61,10 @@ public class GETDiscussionStepdefs {
         discussionAPI.setGetInvalidDiscussion(id);
     }
 
-    @Then("Status code should be {int} Not Found")
-    public void statusCodeShouldBeNotFound(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
+//    @Then("Status code should be {int} Not Found")
+//    public void statusCodeShouldBeNotFound(int ok) {
+//        SerenityRest.then().statusCode(ok);
+//    }
 
     @And("Validate get single data invalid id resource json schema")
     public void validateGetSingleDataInvalidIdResourceJsonSchema() {

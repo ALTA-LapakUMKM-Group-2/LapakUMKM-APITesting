@@ -27,10 +27,10 @@ public class POSTDiscussionStepdefs {
         SerenityRest.when().post(discussionAPI.POST_CREATE_DISCUSSION);
     }
 
-    @Then("Status code should be {int} Created")
-    public void statusCodeShouldBeCreated(int oke) {
-        SerenityRest.then().statusCode(oke);
-    }
+//    @Then("Status code should be {int} Created")
+//    public void statusCodeShouldBeCreated(int oke) {
+//        SerenityRest.then().statusCode(oke);
+//    }
 
     @And("Validate post create new data resources json schema")
     public void validatePostCreateNewDataResourcesJsonSchema() {
@@ -50,10 +50,10 @@ public class POSTDiscussionStepdefs {
         discussionAPI.setPostCreateDiscussion(jsonReq);
     }
 
-    @Then("Status code should be {int} Bad Request")
-    public void statusCodeShouldBeBadRequest(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
+//    @Then("Status code should be {int} Bad Request")
+//    public void statusCodeShouldBeBadRequest(int ok) {
+//        SerenityRest.then().statusCode(ok);
+//    }
 
     @And("Validate post discussion invalid create new data resource json schema")
     public void validatePostInvalidCreateNewDataResourceJsonSchema() {
