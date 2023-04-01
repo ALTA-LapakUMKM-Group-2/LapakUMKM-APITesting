@@ -18,7 +18,7 @@ public class PostCategoryStepdefs {
 
     @Given("Post create new data with request body categories")
     public void postCreateNewDataWithRequestBodyCategories() {
-        File jsonReq = new File(Constant.JSON_REQ_BODY_POST + "PostCategoryReqBody.json");
+        File jsonReq = new File(Constant.JSON_REQ_BODY_POST_FEATURE + "PostCategoryReqBody.json");
         categoryAPI.setGetPostCreateNewDataWithRequestBodyCategories(jsonReq);
     }
 
