@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "room_id": {
+          "type": "string"
+        },
+        "sender_id": {
+          "type": "integer"
+        },
+        "sender": {
+          "type": "object",
+          "properties": {
+            "full_name": {
+              "type": "string"
+            },
+            "photo_profile": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "full_name",
+            "photo_profile"
+          ]
+        },
+        "recipient_id": {
+          "type": "integer"
+        },
+        "recipient": {
+          "type": "object",
+          "properties": {
+            "full_name": {
+              "type": "string"
+            },
+            "photo_profile": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "full_name",
+            "photo_profile"
+          ]
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "room_id",
+        "sender_id",
+        "sender",
+        "recipient_id",
+        "recipient",
+        "text"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "data",
+    "message",
+    "status"
+  ]
+}
