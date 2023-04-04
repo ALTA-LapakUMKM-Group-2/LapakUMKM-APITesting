@@ -10,7 +10,7 @@ import java.io.File;
 
 public class FeedbackAPI {
 
-    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJleHAiOjE2ODA0NTE5ODB9.-JcItFOA3992Qeq_zH3djv7MRbngPsZfuCyWUrfYFwY";
+    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNjgwNzgyNzU3fQ.ta3duTiy0m7CzRAf6nP_y0P7OADKer4vA7pb0claBtA";
 
     // POST
     public static String POST_CREATE_FEEDBACK = ConstantFeedback.BASE_URL + "/feedbacks";
