@@ -18,7 +18,7 @@ public class CreateTransactionStepdefs {
 
     @Given("Post create new data with request body transaction")
     public void postCreateNewDataWithRequestBodyTransaction() {
-        File jsonReq = new File(Constant.JSON_REQ_BODY_POST_TRANSACTION + "CreateTransactionReqBody.json");
+        File jsonReq = new File(Constant.JSON_REQ_BODY_POST_TRANSACTION+"CreateTransactionReqBody.json");
         transactionAPI.setGetPostCreateNewDataWithRequestBodyTransaction(jsonReq);
     }
 
@@ -38,22 +38,27 @@ public class CreateTransactionStepdefs {
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaNewCategoriesResources));
     }
 
-//
-//    @Given("Create new transaction")
-//    public void createNewTransaction() {
-//    }
-//
-//    @When("Send transaction")
-//    public void sendTransaction() {
-//        public void sendCreateNewTransaction () {
-//            SerenityRest.when().post(TransactionAPI.POST_CREATE_TRANSACTION);
-//        }
-//
-//        @Then("Status code should be {int} Created")
-//        public void statusCodeShouldBeCreated ( int Created){
-//            SerenityRest.then().statusCode(Created);
-//        }
-//    }
+    @Given("Create new transaction empty value")
+    public void createNewTransactionEmptyValueInvalid(int id) {
+        File jsonSchemaNewCategoriesResources = new File(Constant.JSON_SCHEMA_POSTNEWT + "CreateIdTransactionJSONSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaNewCategoriesResources));
+    }
+
+
+
+    @When("Send transaction")
+        public void sendTransaction(){
+            SerenityRest.when().post(TransactionAPI.POST_CREATE_TRANSACTION);
+        }
+
+
+    @Then("Status code should be {int} Bad Request")
+    public void statusCodeShouldBeBadRequest(int arg0) {
+    }
+
+    @Given("Create new transaction empty value \\(invalid)")
+    public void createNewTransactionEmptyValueInvalid() {
+    }
 }
 //   @Given("Post create new transaction empty value")
 //    public void postCreateNewTransactionEmptyValue() {

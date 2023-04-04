@@ -8,7 +8,7 @@ import starter.LapakUMKM.Utils.Constant;
 import java.io.File;
 
 public class TransactionAPI {
-    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6InVzZXIiLCJleHAiOjE2ODA0OTAxODZ9.Cja00MvGodgDpMer4Fa5AxoEg-2EurfUbOQN3VD0o5I";
+    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNjgwNjcxNzAxfQ.rkBolTf_ZAHco9cRqlIC_q7OyL6TWqMkQF20Ljb1c4w";
     public static String GET_ID_TRANSACTION = Constant.BASE_URL+"/transactions/{id}";
     public static String GET_LIST_TRANSACTION = Constant.BASE_URL+"/transactions";
     public static String POST_CREATE_TRANSACTION = Constant.BASE_URL+"/transactions";
