@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/Welcome9",
+  "$ref": "#/definitions/Welcome8",
   "definitions": {
-    "Welcome9": {
+    "Welcome8": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -21,7 +21,7 @@
         "message",
         "status"
       ],
-      "title": "Welcome9"
+      "title": "Welcome8"
     },
     "Data": {
       "type": "object",
@@ -55,12 +55,24 @@
         },
         "role": {
           "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "photo_profile": {
+          "type": "string"
         }
       },
       "required": [
+        "address",
         "email",
         "full_name",
         "id",
+        "phone_number",
+        "photo_profile",
         "role"
       ],
       "title": "User"

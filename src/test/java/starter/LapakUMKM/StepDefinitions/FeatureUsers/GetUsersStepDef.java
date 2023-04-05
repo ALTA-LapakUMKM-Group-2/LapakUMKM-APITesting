@@ -32,4 +32,16 @@ public class GetUsersStepDef {
         File jsonSchema = new File(ConstantUsers.JSON_SCHEMA_GET + "/GetValidSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+
+    // Negative Get Invalid Parameter
+    @Given("Get users data with invalid parameter")
+    public void getUsersDataWithInvalidParameter() {lapakUsersAPI.setGetUsersInvalid();
+    }
+
+    @And("Validate get users invalid parameter json schema")
+    public void validateGetUsersInvalidParameterJsonSchema() {
+        File jsonSchema = new File(ConstantUsers.JSON_SCHEMA_GET + "/GetInvalidSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
 }

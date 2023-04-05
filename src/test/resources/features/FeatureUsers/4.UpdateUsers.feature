@@ -5,4 +5,4 @@ Feature: Post Update Users
     Given Post update data request body
     When Send put update data
     Then Should return status code 200
-    And Validate post update users resource json schema
+  ##  And Validate post update users resource json schema

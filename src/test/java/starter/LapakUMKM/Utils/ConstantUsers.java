@@ -15,11 +15,13 @@ public class ConstantUsers {
 
     // JSON SCHEMA
 
-    public static final String JSON_SCHEMA_REGISTER =DIR + "/src/test/resources/JSON/JsonSchema/RegisterUsers";
+    public static final String JSON_SCHEMA_REGISTER = DIR + "/src/test/resources/JSON/JsonSchema/RegisterUsers";
 
     public static final String JSON_SCHEMA_LOGIN = DIR + "/src/test/resources/JSON/JsonSchema/LoginUsers";
 
     public static final String JSON_SCHEMA_GET = DIR + "/src/test/resources/JSON/JsonSchema/GetUsers";
 
-    public static final String JSON_SCHEMA_UPDATE =DIR + "/src/test/resources/JSON/JsonSchema/UpdateUsers";
+    public static final String JSON_SCHEMA_UPDATE = DIR + "/src/test/resources/JSON/JsonSchema/UpdateUsers";
+
+    public static final String JSON_SCHEMA_DELETE= DIR + "/src/test/resources/JSON/JsonSchema/DeleteUsers";
 }
