@@ -101,7 +101,10 @@ public class ProductPostPutStepdefs {
     @Given("Post add image product with multipart valid")
     public void postAddImageProductWithMultipartValid() {
         File image = new File(Constant.UPLOAD_IMAGE + "baju3.jpeg");
-        lapakProductsApi.setPostAddImage(image,10);
+        Response response = SerenityRest.get(lapakProductsApi.DELETE_PRODUCTS_GET);
+        JsonPath jsonPath= response.jsonPath();
+        int id = jsonPath.get(lapakResponses.DELETE_ID);
+        lapakProductsApi.setPostAddImage(image,id);
     }
 
     @When("Send post add image product parameter")
@@ -131,7 +134,10 @@ public class ProductPostPutStepdefs {
     @Given("Post add image product with other extension image")
     public void postAddImageProductWithOtherExtensionImage() {
         File image = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
-        lapakProductsApi.setPostAddImageOtherExtension(image,10);
+        Response response = SerenityRest.get(lapakProductsApi.DELETE_PRODUCTS_GET);
+        JsonPath jsonPath= response.jsonPath();
+        int id = jsonPath.get(lapakResponses.DELETE_ID);
+        lapakProductsApi.setPostAddImageOtherExtension(image,id);
     }
 
     @Then("Status code should be {int} unsupported media type")
@@ -149,7 +155,10 @@ public class ProductPostPutStepdefs {
     @Given("Post add image product with large size")
     public void postAddImageProductWithLargeSize() {
         File image = new File(Constant.UPLOAD_IMAGE + "largeExtension.jpg");
-        lapakProductsApi.setPostAddImageOtherExtension(image,10);
+        Response response = SerenityRest.get(lapakProductsApi.DELETE_PRODUCTS_GET);
+        JsonPath jsonPath= response.jsonPath();
+        int id = jsonPath.get(lapakResponses.DELETE_ID);
+        lapakProductsApi.setPostAddImageOtherExtension(image,id);
     }
 
     @Then("Status code should be {int} Request Entity Too Large")
@@ -159,8 +168,12 @@ public class ProductPostPutStepdefs {
 
     @Given("Post add image product without file image")
     public void postAddImageProductWithoutFileImage() {
-        lapakProductsApi.setPostAddImageWithoutFile(10);
+        Response response = SerenityRest.get(lapakProductsApi.DELETE_PRODUCTS_GET);
+        JsonPath jsonPath= response.jsonPath();
+        int id = jsonPath.get(lapakResponses.DELETE_ID);
+        lapakProductsApi.setPostAddImageWithoutFile(id);
     }
+
     @And("Validate add image product without file image resources json schema")
     public void validateAddImageProductWithoutFileImageResourcesJsonSchema() {
         File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");

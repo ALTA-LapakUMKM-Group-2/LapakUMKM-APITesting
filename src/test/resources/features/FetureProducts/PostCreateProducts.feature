@@ -17,13 +17,13 @@ Feature: POST create product
     When Send post create product parameter
     Then Status code should be 400 Bad Request
     And Validate create product without json request body resources json schema
-@Test
+  @Team2
   Scenario: [Products-A014]Post create product with empty string field json request body
     Given Post create product with empty field json request body
     When Send post create product parameter
     Then Status code should be 400 Bad Request
     And Validate create product with empty field json request body resources json schema
-@Test
+  @Team2
   Scenario:[Products-A015]Post create product with invalid parameter
     Given Post create product with invalid parameter
     When Send post create product parameter

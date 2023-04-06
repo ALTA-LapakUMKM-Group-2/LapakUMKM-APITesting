@@ -26,7 +26,7 @@ public class ProductsGetStepdefs {
         SerenityRest.when().get(lapakProductsApi.GET_LIST_PRODUCTS);
     }
 
-    @And("Validate get list all valid parameter product resources json schema")
+    @And("Validate get all valid parameter product resources json schema")
     public void validateGetListAllValidParameterProductResourcesJsonSchema() {
         File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetAllProducts.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
@@ -47,7 +47,7 @@ public class ProductsGetStepdefs {
         SerenityRest.then().statusCode(arg0);
     }
 
-    @And("Validate get list all product invalid parameter product resources json schema")
+    @And("Validate get all product invalid parameter product resources json schema")
     public void validateGetListAllProductInvalidParameterProductResourcesJsonSchema() {
         File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetAllInvalid.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
@@ -119,7 +119,7 @@ public class ProductsGetStepdefs {
 
     @Given("Get product by user id with valid parameter")
     public void getProductByUserIdWithValidParameter() {
-        lapakProductsApi.setGetProductByUser(7);
+        lapakProductsApi.setGetProductByUser(141);
     }
 
 

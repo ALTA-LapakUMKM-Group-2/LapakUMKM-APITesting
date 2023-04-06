@@ -2,7 +2,7 @@ Feature: Get Image
 
   @Team2
   Scenario: [Products-A005]Get image by product id valid parameter
-    Given Get image by product id 5 valid parameter
+    Given Get image by product id 1 valid parameter
     When Send get image by products id parameter
     Then Status code should be 200 OK
     And Validate image by products resources json schema

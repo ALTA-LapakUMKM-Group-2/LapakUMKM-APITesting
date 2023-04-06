@@ -1,40 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/Welcome5",
-  "definitions": {
-    "Welcome5": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "data": {
       "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "data": {
-          "$ref": "#/definitions/Data"
-        },
-        "message": {
-          "type": "string"
-        },
-        "status": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "data",
-        "message",
-        "status"
-      ],
-      "title": "Welcome5"
-    },
-    "Data": {
-      "type": "object",
-      "additionalProperties": false,
       "properties": {
         "id": {
-          "type": "integer"
+          "type": "number"
         },
         "user_id": {
-          "type": "integer"
+          "type": "number"
         },
         "category_id": {
-          "type": "integer"
+          "type": "number"
         },
         "product_name": {
           "type": "string"
@@ -46,92 +25,88 @@
           "type": "string"
         },
         "price": {
-          "type": "integer"
+          "type": "number"
         },
         "stock_remaining": {
-          "type": "integer"
+          "type": "number"
+        },
+        "stock_sold": {
+          "type": "number"
         },
         "user": {
-          "$ref": "#/definitions/User"
+          "type": "object",
+          "properties": {
+            "full_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "photo_profile": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "full_name",
+            "address",
+            "photo_profile"
+          ]
         },
         "category": {
-          "$ref": "#/definitions/Category"
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "category"
+          ]
         },
         "product_image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ProductImage"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "image": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "image"
+            ]
           }
         }
       },
       "required": [
-        "category",
+        "id",
+        "user_id",
         "category_id",
-        "description",
-        "id",
-        "price",
-        "product_image",
         "product_name",
+        "description",
         "size",
+        "price",
         "stock_remaining",
+        "stock_sold",
         "user",
-        "user_id"
-      ],
-      "title": "Data"
+        "category",
+        "product_image"
+      ]
     },
-    "Category": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "category": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "category"
-      ],
-      "title": "Category"
+    "message": {
+      "type": "string"
     },
-    "ProductImage": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "integer"
-        },
-        "image": {
-          "type": "string",
-          "format": "uri",
-          "qt-uri-protocols": [
-            "https"
-          ],
-          "qt-uri-extensions": [
-            ".png"
-          ]
-        }
-      },
-      "required": [
-        "id",
-        "image"
-      ],
-      "title": "ProductImage"
-    },
-    "User": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "full_name": {
-          "type": "string"
-        },
-        "address": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "address",
-        "full_name"
-      ],
-      "title": "User"
+    "status": {
+      "type": "boolean"
     }
-  }
+  },
+  "required": [
+    "data",
+    "message",
+    "status"
+  ]
 }

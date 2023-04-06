@@ -17,7 +17,7 @@ Feature: POST add image product
     When Send post add image product parameter
     Then Status code should be 415 unsupported media type
     And Validate add image product with other extension image json schema
-  @Test
+  @Team2
   Scenario: [Products-A019]Post add image product with large size
     Given Post add image product with large size
     When Send post add image product parameter

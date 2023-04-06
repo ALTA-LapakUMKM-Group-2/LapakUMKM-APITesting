@@ -1,7 +1,7 @@
-Feature: Get List All Product
+Feature: Get Product By id
   @Team2
   Scenario: Get product by id with valid parameter
-   Given Get product by id 41 with valid parameter
+   Given Get product by id 1 with valid parameter
     When Send get product by id parameter
     Then Status code should be 200 OK
     And Validate product by id valid parameter product resources json schema

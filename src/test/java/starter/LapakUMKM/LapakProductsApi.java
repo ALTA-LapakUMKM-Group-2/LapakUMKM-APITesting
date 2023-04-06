@@ -1,6 +1,6 @@
 package starter.LapakUMKM;
 
-import com.github.javafaker.Faker;
+
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.LapakUMKM.Utils.Constant;
@@ -8,15 +8,13 @@ import starter.LapakUMKM.Utils.Constant;
 import java.io.File;
 
 public class LapakProductsApi {
-    Faker faker = new Faker();
-    String FIRSTNAME = faker.name().firstName();
-    public static  String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6InVzZXIiLCJleHAiOjE2ODA0OTAxODZ9.Cja00MvGodgDpMer4Fa5AxoEg-2EurfUbOQN3VD0o5I";
+    public static  String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxLCJyb2xlIjoidXNlciIsImV4cCI6MTY4MTAyMDcyMH0.zFGihTln_t_Tv8RehXGIAyGOzX_4UKzjIJE2XNai4v0";
     public static String GET_LIST_PRODUCTS = Constant.BASE_URL + "/{products}";
     public static String GET_LIST_PRODUCTS_ID = Constant.BASE_URL + "/products/{id}";
     public static String GET_LIST_PRODUCTS_IMAGE = Constant.BASE_URL + "/products/{id}/images";
     public static String POST_CREATE_PRODUCTS = Constant.BASE_URL + "/{products}";
     public static String POST_ADD_IMAGE = Constant.BASE_URL + "/products/{id}/upload-photo";
-    public static String DELETE_PRODUCTS_GET = Constant.BASE_URL + "/products?user_id=7";
+    public static String DELETE_PRODUCTS_GET = Constant.BASE_URL + "/products?user_id=141";
     public static String GET_BYUSER = Constant.BASE_URL + "/products?user_id={id}";
     public static String GET_BY_CATEGORY = Constant.BASE_URL + "/products?category_id={id}";
     public static String DELETE_PRODUCTS = Constant.BASE_URL + "/products/{id}";

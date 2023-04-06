@@ -1,3 +1,4 @@
+@Test
 Feature: Get product by category
   @Team2
   Scenario: [Products-A009]Get product by category with valid parameter
