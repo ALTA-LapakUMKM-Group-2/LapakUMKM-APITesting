@@ -12,11 +12,11 @@ public class CartAPI {
 
 
     public static  String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTI2LCJyb2xlIjoidXNlciIsImV4cCI6MTY4MDkzNzA2OH0.VGAjxIw4hkSP9xGBAa-kkPRcxJw0Bn-quyJoTXi3u74";
-    public static  String GET_LIST_CART = ConstantCart.BASE_URL+"/cart";
-    public static  String GET_SINGLE_CART = ConstantCart.BASE_URL+"/cart/{id}";
-    public static  String POST_CREATE_CART = ConstantCart.BASE_URL+"/cart";
-    public static  String PUT_UPDATE_CART = ConstantCart.BASE_URL+"/cart/{id}";
-    public static  String DELETE_SINGLE_CART = ConstantCart.BASE_URL+"/cart/{id}";
+    public static  String GET_LIST_CART = ConstantCart.BASE_URL+"/carts";
+    public static  String GET_SINGLE_CART = ConstantCart.BASE_URL+"/carts/{id}";
+    public static  String POST_CREATE_CART = ConstantCart.BASE_URL+"/carts";
+    public static  String PUT_UPDATE_CART = ConstantCart.BASE_URL+"/carts/{id}";
+    public static  String DELETE_SINGLE_CART = ConstantCart.BASE_URL+"/carts/{id}";
 
     //ALIA
     @Step("Get list data cart")
@@ -31,6 +31,10 @@ public class CartAPI {
    @Step("Post create new Cart")
     public void setGetPostCreateNewCart(File json) {
         SerenityRest.given().header("Authorization",TOKEN).contentType(ContentType.JSON).body(json);
+    }
+    @Step("Put edit new Cart")
+    public void setPutEditNewCart(File json, int id) {
+        SerenityRest.given().pathParam("id", id).header("Authorization",TOKEN).contentType(ContentType.JSON).body(json);
     }
 //    @Step("Get single data cart with invalid id")
 //    public void setGetSingleDataCartWithInvalidId(int id){

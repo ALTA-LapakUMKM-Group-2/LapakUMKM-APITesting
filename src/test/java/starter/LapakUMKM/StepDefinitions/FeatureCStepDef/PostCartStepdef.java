@@ -17,12 +17,12 @@ public class PostCartStepdef {
     CartAPI cartAPI;
     @Given("Post create new data with request body cart")
     public void postCreateNewDataWithRequestBodyCart() {
-        File jsonReq = new File(ConstantCart.JSON_SCHEMA_Post_CART + "PostCartReqBody.json");
-        cartAPI.setGetPostCartNewDataWithRequestBodyCart(jsonReq);
+        File jsonReq = new File(ConstantCart.JSON_REQ_CART + "PostCartReqBody.json");
+        cartAPI.setGetPostCreateNewCart(jsonReq);
     }
 
-    @When("Send create new categories")
-    public void sendCreateNewCategories() {SerenityRest.when().post(CategoryAPI.POST_CREATE_CATEGORY);
+    @When("Send create new cart")
+    public void sendCreateNewCart() {SerenityRest.when().post(CartAPI.POST_CREATE_CART);
     }
 
     @Then("Status code should be {int} Created")
@@ -30,11 +30,6 @@ public class PostCartStepdef {
         SerenityRest.then().statusCode(Created);
     }
 
-    @And("Validate new categories resource json schema")
-    public void validateNewCategoriesResourceJsonSchema(){
-        File jsonSchemaNewCategoriesResources = new File(Constant.JSON_SCHEMA_POSTNEW +"CreateNewCategoryJSONSchema.json");
-        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaNewCategoriesResources));
-    }
 }
 
 //

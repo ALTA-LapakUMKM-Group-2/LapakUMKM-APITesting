@@ -1,13 +1,9 @@
 package starter.LapakUMKM.Utils;
 
 public class ConstantCart {
-    public static final String BASE_URL = "https://lapakumkm.mindd.site/";
+    public static final String BASE_URL = "https://lapakumkm.mindd.site";
     public static final String DIR = System.getProperty("user.dir");
-    public static final String JSON_REQ_BODY_USER = DIR+"/src/test/resources/JSON/ReqBody/FeatureUser/";
-    public static final String JSON_REQ_BODY_POST= DIR+"/src/test/resources/JSON/ReqBody/FeaturePost/";
-    public static final String JSON_REQ_BODY_COMMENT= DIR+"/src/test/resources/JSON/ReqBody/FeatureComment/";
-    public static final String JSON_REQ_POST_CART= DIR+"/src/test/resources/JSON/ReqBody/FeatureTodos/";
-    public static final String JSON_SCHEMA_USER = DIR+"/src/test/resources/JSON/JsonSchema/FeatureUser/";
-    public static final String JSON_SCHEMA_TODOS = DIR+"/src/test/resources/JSON/JsonSchema/FeatureTodos/";
-    public static final String JSON_SCHEMA_GET_CART = DIR+"/src/test/resources/JSON/JsonSchema/FeatureCart/";
-    public static final String JSON_SCHEMA_GET_SINGLE = DIR+"/src/test/resources/JSON/JsonSchema/FeatureCart/";
+    public static final String JSON_REQ_CART = DIR + "/src/test/resources/JSON/ReqBody/FeatureCart/";
+    public static final String JSON_SCHEMA_GET_CART = DIR + "/src/test/resources/JSON/JsonSchema/FeatureCart/";
+    public static final String JSON_SCHEMA_GET_SINGLE = DIR + "/src/test/resources/JSON/JsonSchema/FeatureCart/";
+}
