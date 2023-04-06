@@ -11,7 +11,7 @@ import java.io.File;
 
 public class ChatAPI {
 
-    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNjgwNTc5NTk2fQ.5nCAcugpPf7cJYc6WZOJHKAkhhTBrUzsbFPc-k_QdYI";
+    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQ1LCJyb2xlIjoidXNlciIsImV4cCI6MTY4MTA1MjUzMX0.P3MIosc2ebLHgxqB9Q1dFqfm0GB1KuGrigjJfp4ApEo";
 
     // POST
     public static String POST_CREATE_CHAT = ConstantChat.BASE_URL + "/chats";
