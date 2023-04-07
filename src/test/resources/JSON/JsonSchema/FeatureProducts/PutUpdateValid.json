@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "user_id": {
+          "type": "number"
+        },
+        "category_id": {
+          "type": "number"
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "stock_remaining": {
+          "type": "number"
+        },
+        "stock_sold": {
+          "type": "number"
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "full_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "photo_profile": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "full_name",
+            "address",
+            "photo_profile"
+          ]
+        },
+        "category": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "category"
+          ]
+        },
+        "product_image": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "image": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "image"
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "user_id",
+        "category_id",
+        "product_name",
+        "description",
+        "size",
+        "price",
+        "stock_remaining",
+        "stock_sold",
+        "user",
+        "category",
+        "product_image"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "data",
+    "message",
+    "status"
+  ]
+}
