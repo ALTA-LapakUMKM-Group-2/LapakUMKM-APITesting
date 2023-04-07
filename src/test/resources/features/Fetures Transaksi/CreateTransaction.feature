@@ -1,3 +1,4 @@
+@Team2
 Feature: Create Transaksi
 
   @transaction @get

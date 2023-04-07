@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.LapakUMKM.TransactionAPI;
-import starter.LapakUMKM.Utils.Constant;
+import starter.LapakUMKM.Utils.ConstantTransaksi;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 
@@ -34,7 +34,7 @@ public class GetTransactionStepdefs {
 
     @And("Validate get list data transaction resource json schema")
     public void ValidateGetListdataTransactionResourceJsonSchema() {
-        File jsonSchemaListResources = new File(Constant.JSON_SCHEMA_GETLISTTRANSACTION + "GetListTransactionJSONSchema2.json");
+        File jsonSchemaListResources = new File(ConstantTransaksi.JSON_SCHEMA_GETLISTTRANSACTION + "GetListTransactionJSONSchema2.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListResources));
     }
     //GETby id
@@ -50,7 +50,7 @@ public class GetTransactionStepdefs {
 
     @And("Validate get single data resource json schema")
     public void validateGetSingleDataResourceJsonSchema(){
-        File jsonSchemaListResources = new File(Constant.JSON_SCHEMA_GETID +"GetIdTransactionJSONSchema.json");
+        File jsonSchemaListResources = new File(ConstantTransaksi.JSON_SCHEMA_GETID +"GetIdTransactionJSONSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListResources));
     }
     //invalid id

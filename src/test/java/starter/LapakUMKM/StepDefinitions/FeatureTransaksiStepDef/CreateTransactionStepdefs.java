@@ -8,7 +8,7 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.LapakUMKM.TransactionAPI;
-import starter.LapakUMKM.Utils.Constant;
+import starter.LapakUMKM.Utils.ConstantTransaksi;
 
 import java.io.File;
 
@@ -18,7 +18,7 @@ public class CreateTransactionStepdefs {
 
     @Given("Post create new data with request body transaction")
     public void postCreateNewDataWithRequestBodyTransaction() {
-        File jsonReq = new File(Constant.JSON_REQ_BODY_POST_TRANSACTION+"CreateTransactionReqBody.json");
+        File jsonReq = new File(ConstantTransaksi.JSON_REQ_BODY_POST_TRANSACTION+"CreateTransactionReqBody.json");
         transactionAPI.setGetPostCreateNewDataWithRequestBodyTransaction(jsonReq);
     }
 
@@ -34,13 +34,13 @@ public class CreateTransactionStepdefs {
 
     @And("Validate new categories resource json schema")
     public void validateNewCategoriesResourceJsonSchema() {
-        File jsonSchemaNewCategoriesResources = new File(Constant.JSON_SCHEMA_POSTNEWT + "CreateIdTransactionJSONSchema.json");
+        File jsonSchemaNewCategoriesResources = new File(ConstantTransaksi.JSON_SCHEMA_POSTNEWT + "CreateIdTransactionJSONSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaNewCategoriesResources));
     }
 
     @Given("Create new transaction empty value")
     public void createNewTransactionEmptyValueInvalid(int id) {
-        File jsonSchemaNewCategoriesResources = new File(Constant.JSON_SCHEMA_POSTNEWT + "CreateIdTransactionJSONSchema.json");
+        File jsonSchemaNewCategoriesResources = new File(ConstantTransaksi.JSON_SCHEMA_POSTNEWT + "CreateIdTransactionJSONSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaNewCategoriesResources));
     }
 

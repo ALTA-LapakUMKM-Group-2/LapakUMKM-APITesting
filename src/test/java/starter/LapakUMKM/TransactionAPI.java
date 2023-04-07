@@ -3,15 +3,15 @@ package starter.LapakUMKM;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
-import starter.LapakUMKM.Utils.Constant;
+import starter.LapakUMKM.Utils.ConstantTransaksi;
 
 import java.io.File;
 
 public class TransactionAPI {
     public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNjgwNjcxNzAxfQ.rkBolTf_ZAHco9cRqlIC_q7OyL6TWqMkQF20Ljb1c4w";
-    public static String GET_ID_TRANSACTION = Constant.BASE_URL+"/transactions/{id}";
-    public static String GET_LIST_TRANSACTION = Constant.BASE_URL+"/transactions";
-    public static String POST_CREATE_TRANSACTION = Constant.BASE_URL+"/transactions";
+    public static String GET_ID_TRANSACTION = ConstantTransaksi.BASE_URL+"/transactions/{id}";
+    public static String GET_LIST_TRANSACTION = ConstantTransaksi.BASE_URL+"/transactions";
+    public static String POST_CREATE_TRANSACTION = ConstantTransaksi.BASE_URL+"/transactions";
 
     @Step("Get list transaction")
     public void getListTransaction() {

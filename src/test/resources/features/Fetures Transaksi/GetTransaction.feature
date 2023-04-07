@@ -1,3 +1,4 @@
+@Team2
 Feature: Get Transaksi
 
   @transaction @get
