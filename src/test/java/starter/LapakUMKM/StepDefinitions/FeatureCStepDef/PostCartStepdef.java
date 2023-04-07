@@ -30,6 +30,17 @@ public class PostCartStepdef {
         SerenityRest.then().statusCode(Created);
     }
 
+    //Post create new data with request body cart with empty value
+    @Given("Post create new data with request body cart with empty value")
+    public void postCreateNewDataWithRequestBodyCartWithEmptyValue() {
+        File jsonReq = new File(ConstantCart.JSON_REQ_CART + "PostEmptyCartReqBody.json");
+        cartAPI.setGetPostCreateNewCart(jsonReq);
+    }
+    @Then("Status code should be {int} Bad Request")
+    public void statusCodeShouldBeBadRequest(int BadRequest) {
+        SerenityRest.then().statusCode(BadRequest);
+    }
+
 }
 
 //

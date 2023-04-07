@@ -36,6 +36,10 @@ public class CartAPI {
     public void setPutEditNewCart(File json, int id) {
         SerenityRest.given().pathParam("id", id).header("Authorization",TOKEN).contentType(ContentType.JSON).body(json);
     }
+    @Step("delete Cart")
+    public void setDeleteCart(int id) {
+        SerenityRest.given().pathParam("id", id).header("Authorization",TOKEN);
+    }
 //    @Step("Get single data cart with invalid id")
 //    public void setGetSingleDataCartWithInvalidId(int id){
 //        SerenityRest.given().pathParam("id", id);
