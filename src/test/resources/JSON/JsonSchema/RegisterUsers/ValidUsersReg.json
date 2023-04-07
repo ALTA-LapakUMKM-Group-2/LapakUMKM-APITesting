@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/Welcome6",
+  "$ref": "#/definitions/Welcome9",
   "definitions": {
-    "Welcome6": {
+    "Welcome9": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -21,15 +21,12 @@
         "message",
         "status"
       ],
-      "title": "Welcome6"
+      "title": "Welcome9"
     },
     "Data": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "id": {
-          "type": "integer"
-        },
         "full_name": {
           "type": "string"
         },
@@ -39,19 +36,14 @@
         "role": {
           "type": "string"
         },
-        "phone_number": {
-          "type": "string"
-        },
-        "address": {
+        "photo_profile": {
           "type": "string"
         }
       },
       "required": [
-        "address",
         "email",
         "full_name",
-        "id",
-        "phone_number",
+        "photo_profile",
         "role"
       ],
       "title": "Data"
