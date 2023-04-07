@@ -1,3 +1,4 @@
+@Team2
 Feature: Post Create Card
 
  Scenario: Post create new cart

@@ -1,3 +1,4 @@
+@Team2
 Feature: Delete cart
 
   Scenario: Delete cart

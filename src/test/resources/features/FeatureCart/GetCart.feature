@@ -1,3 +1,4 @@
+@Team2
 Feature: Get Cart
 
 Scenario: Get List Cart
