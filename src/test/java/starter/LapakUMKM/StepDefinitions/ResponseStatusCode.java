@@ -24,4 +24,9 @@ public class ResponseStatusCode {
         SerenityRest.then().statusCode(ok);
     }
 
+    @Then("Status code should be {int} Unauthorized")
+    public void statusCodeShouldBeUnauthorized(int arg0) {
+        SerenityRest.then().statusCode(arg0);
+    }
+
 }

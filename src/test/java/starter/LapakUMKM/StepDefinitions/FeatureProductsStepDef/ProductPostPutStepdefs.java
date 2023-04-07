@@ -32,11 +32,6 @@ public class ProductPostPutStepdefs {
         SerenityRest.when().post(lapakProductsApi.POST_CREATE_PRODUCTS);
     }
 
-    @Then("Status code should be {int} Created")
-    public void statusCodeShouldBeCreated(int arg0) {
-        SerenityRest.then().statusCode(arg0);
-    }
-
     @And("Validate post create new user with auth token resources json schema")
     public void validatePostCreateNewUserWithAuthTokenResourcesJsonSchema() {
         File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductsValid.json");
@@ -49,11 +44,6 @@ public class ProductPostPutStepdefs {
         lapakProductsApi.setPostCreateProductsWithoutAuth("products");
     }
 
-    @Then("Status code should be {int} Unauthorized")
-    public void statusCodeShouldBeUnauthorized(int arg0) {
-        SerenityRest.then().statusCode(arg0);
-    }
-
     @And("Validate post create new user without auth token resources json schema")
     public void validatePostCreateNewUserWithoutAuthTokenResourcesJsonSchema() {
         File jsonSchemaProducts = new File(Constant.JSON_SCHEMA_PRODUCTS + "PostCreateProductInvalid.json");
@@ -63,11 +53,6 @@ public class ProductPostPutStepdefs {
     @Given("Post create product without json request body")
     public void postCreateProductWithoutJsonRequestBody() {
         lapakProductsApi.setPostCreateProductsWithoutReqBody("products");
-    }
-
-    @Then("Status code should be {int} Bad Request")
-    public void statusCodeShouldBeBadRequest(int arg0) {
-        SerenityRest.then().statusCode(arg0);
     }
 
     @And("Validate create product without json request body resources json schema")

@@ -1,7 +1,6 @@
 @Team2
 Feature: Feature Category
 
-
   Scenario: Get list data Categories
     Given Get list data categories
     When  Send get list category

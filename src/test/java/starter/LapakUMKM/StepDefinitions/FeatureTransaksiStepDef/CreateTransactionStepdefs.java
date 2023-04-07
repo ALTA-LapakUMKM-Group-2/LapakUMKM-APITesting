@@ -32,8 +32,8 @@ public class CreateTransactionStepdefs {
         SerenityRest.then().statusCode(created);
     }
 
-    @And("Validate new categories resource json schema")
-    public void validateNewCategoriesResourceJsonSchema() {
+    @And("Validate new transaction resource json schema")
+    public void validateNewTransactionResourceJsonSchema() {
         File jsonSchemaNewCategoriesResources = new File(ConstantTransaksi.JSON_SCHEMA_POSTNEWT + "CreateIdTransactionJSONSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaNewCategoriesResources));
     }
@@ -51,10 +51,10 @@ public class CreateTransactionStepdefs {
             SerenityRest.when().post(TransactionAPI.POST_CREATE_TRANSACTION);
         }
 
-
-    @Then("Status code should be {int} Bad Request")
-    public void statusCodeShouldBeBadRequest(int arg0) {
-    }
+//
+//    @Then("Status code should be {int} Bad Request")
+//    public void statusCodeShouldBeBadRequest(int arg0) {
+//    }
 
     @Given("Create new transaction empty value \\(invalid)")
     public void createNewTransactionEmptyValueInvalid() {

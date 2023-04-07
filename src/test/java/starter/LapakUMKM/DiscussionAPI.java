@@ -8,7 +8,7 @@ import java.io.File;
 
 
 public class DiscussionAPI {
-    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQ1LCJyb2xlIjoidXNlciIsImV4cCI6MTY4MTA1MjUzMX0.P3MIosc2ebLHgxqB9Q1dFqfm0GB1KuGrigjJfp4ApEo";
+    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxLCJyb2xlIjoidXNlciIsImV4cCI6MTY4MTAyMDcyMH0.zFGihTln_t_Tv8RehXGIAyGOzX_4UKzjIJE2XNai4v0";
 
 
     //POST

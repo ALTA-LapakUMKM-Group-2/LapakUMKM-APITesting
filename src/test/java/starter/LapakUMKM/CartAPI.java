@@ -11,7 +11,7 @@ import java.io.File;
 public class CartAPI {
 
 
-    public static  String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTI2LCJyb2xlIjoidXNlciIsImV4cCI6MTY4MDkzNzA2OH0.VGAjxIw4hkSP9xGBAa-kkPRcxJw0Bn-quyJoTXi3u74";
+    public static  String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsInJvbGUiOiJzZWxsZXIiLCJleHAiOjE2ODExNDEyOTB9.oi5StCaxvyPZKfgzwU_JfyfQFExkekKhSHuL2fWskdk";
     public static  String GET_LIST_CART = ConstantCart.BASE_URL+"/carts";
     public static  String GET_SINGLE_CART = ConstantCart.BASE_URL+"/carts/{id}";
     public static  String POST_CREATE_CART = ConstantCart.BASE_URL+"/carts";

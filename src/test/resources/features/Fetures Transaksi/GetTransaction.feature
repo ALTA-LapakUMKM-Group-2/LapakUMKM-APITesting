@@ -13,31 +13,22 @@ Feature: Get Transaksi
     Given Get by id with valid 54
     When Send get single data transcation
     Then Status code should be 200 OK
-    And Validate get single data resource json schema
+    And Validate get single data transaction resource json schema
 
  Scenario: Get by transaction invalid id
     Given Get by with invalid 100
     When Send get single data transaction
     Then Status code should be 404 Not Found
-    And Validate get single data resource json schema
+    And Validate get single data transaction resource json schema
 
   Scenario: detail transaction by id
     Given Get single data transaction with valid id 2
     When Send get single data transaction
     Then Status code should be 200 OK
-    And Validate get single data resource json schema
+    And Validate get single data transaction resource json schema
 
   Scenario: detail transaction by invalid id
     Given Get Detail Transaction By Invalid 150
     When Send get single data transaction
     Then Status code should be 404 Not Found
-    And Validate get single data resource json schema
-
-#
-#    Scenario: Post create
-#      Given Create new transaction
-#      When  Send transaction
-#      Then Status code should be 201 Created
-#      And Validate new transaction resource json schema
-#
-#
+    And Validate get single data transaction resource json schema
