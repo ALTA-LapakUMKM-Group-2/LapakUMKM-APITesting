@@ -16,7 +16,7 @@ public class PutCartStepdef {
 
     @Given("Put edit new data with request body cart with id {int}")
     public void putEditNewDataWithRequestBodyCart(int id) {
-        File jsonReq = new File(ConstantCart.JSON_REQ_POSTEMPTY + "PutEmptyCartReqBody.json");
+        File jsonReq = new File(ConstantCart.JSON_REQ_POSTEMPTY + "PutCartReqBody.json");
         cartAPI.setPutEditNewCart(jsonReq, id);
     }
     @When("Send edit new cart")
