@@ -24,14 +24,13 @@ public class RegisterStepDef {
 
     @When("Send request post register user")
     public void sendRequestPostRegisterUser() {
+
         SerenityRest.when().post(LapakUsersAPI.REGISTER_USERS);
     }
 
-    @Then("Should return status code {int}")
-    public void shouldReturnStatusCode(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
-
+   @Then("Should return status code {int}")
+   public void shouldReturnStatusCode(int ok) {
+        SerenityRest.then().statusCode(ok);}
     @And("Validate json schema register")
     public void validateJsonSchemaRegister() {
         File jsonSchema = new File(ConstantUsers.JSON_SCHEMA_REGISTER + "/ValidUsersReg.json");
