@@ -9,7 +9,7 @@ import java.io.File;
 
 public class LapakUsersAPI {
 
-    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzUsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNjgwOTIzMzI1fQ.fCrBRQypUO7_6bzhYWovoR6q5FzoVv-20TKIeMdwkqo";
+    public static String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsInJvbGUiOiJzZWxsZXIiLCJleHAiOjE2ODExNDEyOTB9.oi5StCaxvyPZKfgzwU_JfyfQFExkekKhSHuL2fWskdk";
 
     public static String REGISTER_USERS = ConstantUsers.BASE_URL+ "/auth/register";
 
@@ -31,6 +31,7 @@ public class LapakUsersAPI {
     @Step("Login user")
     public void loginUser(File json) {
         SerenityRest.given()
+                .header("Authorization",TOKEN)
                 .contentType(ContentType.JSON)
                 .body(json);
     }
@@ -42,7 +43,7 @@ public class LapakUsersAPI {
 
     @Step("Get users invalid parameter")
     public void setGetUsersInvalid(){
-        SerenityRest.given().header("Authorization",TOKEN);
+        SerenityRest.given();
     }
 
     @Step("Post update data")

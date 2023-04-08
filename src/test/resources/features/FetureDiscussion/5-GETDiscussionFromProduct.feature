@@ -12,7 +12,7 @@ Feature: GET data discussion from product id
   Scenario: Get data discussion from product id with no registered id
     Given Get data discussion from product id with no registered id 122222222
     When  Send get data invalid id form product
-    Then Status code should be 200 OK
+    Then Status code should be 404 Not Found
     And Validate get invalid data discussion from product data resource json schema
 
 

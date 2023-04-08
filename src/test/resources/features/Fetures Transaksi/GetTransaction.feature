@@ -11,7 +11,7 @@ Feature: Get Transaksi
 
   Scenario: Get by transaction id
     Given Get by id with valid 54
-    When Send get single data transcation
+    When Send get single data transaction
     Then Status code should be 200 OK
     And Validate get single data transaction resource json schema
 

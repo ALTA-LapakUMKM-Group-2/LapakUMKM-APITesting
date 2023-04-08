@@ -13,7 +13,7 @@ import java.io.File;
 public class CategoryAPI {
 
 
-    public static  String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNjgwMzI3NTgxfQ.2q0YIN3lin8F-azBsCBrcBxWzAPDyHcO9SqoF45hKuE";
+    public static  String TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYwLCJyb2xlIjoidXNlciIsImV4cCI6MTY4MTExMjAxNn0.f79cSmg7tFJdoA7MkMOdPS_r-qdt5U7xPHy4Ubff-wM";
     public static  String GET_LIST_CATEGORIES = Constant.BASE_URL+"/categories";
     public static  String GET_SINGLE_CATEGORY = Constant.BASE_URL+"/categories/{id}";
     public static  String POST_CREATE_CATEGORY = Constant.BASE_URL+"/categories";

@@ -3,13 +3,13 @@ Feature: Feature Category
 
 
   Scenario: Put update category with valid id
-    Given Put update category with valid 24
+    Given Put update category with valid 10
     When  Send put update category
     Then Status code should be 200 OK
     And Validate put update category resource json schema
 
   Scenario: Put update category with invalid id
-    Given Put update category with invalid 100
+    Given Put update category with invalid 1000
     When  Send put update category
     Then Status code should be 404 Not Found
 

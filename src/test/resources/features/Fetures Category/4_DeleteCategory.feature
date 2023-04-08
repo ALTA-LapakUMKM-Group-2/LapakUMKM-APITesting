@@ -3,7 +3,7 @@ Feature: Feature Category
 
 
   Scenario: Delete Category With valid id
-    Given Delete category with valid 25
+    Given Delete category with valid 26
     When Send delete category
     Then Status code should be 200 OK
 
