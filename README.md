@@ -43,7 +43,7 @@
 ![Serenity BDD](https://img.shields.io/badge/-serenit%20ybdd-16a67a?style=for-the-badge&logoColor=black)
 ![Cucumber](https://img.shields.io/badge/-cucumber-4bc47b?style=for-the-badge&logoColor=black)
 
-## Contributor
+## Contributors
 
 <a href="https://github.com/ALTA-LapakUMKM-Group-2/LapakUMKM-APITesting/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ALTA-LapakUMKM-Group-2/LapakUMKM-APITesting" />
