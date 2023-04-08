@@ -27,13 +27,13 @@ public class GetTransactionStepdefs {
         SerenityRest.when().get(TransactionAPI.GET_LIST_TRANSACTION);
     }
 
-    @Then("Status code should be {int} OK")
-    public void statusCodeShouldBeOK(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
+//    @Then("Status code should be {int} OK")
+//    public void statusCodeShouldBeOK(int ok) {
+//        SerenityRest.then().statusCode(ok);
+//    }
 
     @And("Validate get list data transaction resource json schema")
-    public void ValidateGetListdataTransactionResourceJsonSchema() {
+    public void ValidateGetListdatatTransactionTransactionResourceJsonSchema() {
         File jsonSchemaListResources = new File(ConstantTransaksi.JSON_SCHEMA_GETLISTTRANSACTION + "GetListTransactionJSONSchema2.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListResources));
     }
@@ -48,7 +48,7 @@ public class GetTransactionStepdefs {
         SerenityRest.when().get(TransactionAPI.GET_ID_TRANSACTION);
     }
 
-    @And("Validate get single data resource json schema")
+    @And("Validate get single data transaction resource json schema")
     public void validateGetSingleDataResourceJsonSchema(){
         File jsonSchemaListResources = new File(ConstantTransaksi.JSON_SCHEMA_GETID +"GetIdTransactionJSONSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListResources));
@@ -57,10 +57,6 @@ public class GetTransactionStepdefs {
     @Given("Get by with invalid {int}")
     public void getByWithInvalidId(int id) {
         transactionAPI.setGetByWithInvalidId(id);
-    }
-    @Then("Status code should be {int} Not Found")
-    public void statusCodeShouldBeNotFound(int notFound) {
-        SerenityRest.then().statusCode(notFound);
     }
 
     @Given("Get detail transaction by id {int}")

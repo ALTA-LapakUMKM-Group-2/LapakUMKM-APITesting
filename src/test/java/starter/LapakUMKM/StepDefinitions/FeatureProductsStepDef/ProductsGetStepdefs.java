@@ -32,19 +32,9 @@ public class ProductsGetStepdefs {
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
     }
 
-    @Then("Status code should be {int} OK")
-    public void statusCodeShouldBeOK(int OK) {
-        SerenityRest.then().statusCode(OK);
-    }
-
     @Given("Get list all product with invalid parameter id {string}")
     public void getListAllProductWithInvalidParameterId(String arg0) {
         lapakProductsApi.setGetListProducts("arg0");
-    }
-
-    @Then("Status code should be {int} Not Found")
-    public void statusCodeShouldBeNotFound(int arg0) {
-        SerenityRest.then().statusCode(arg0);
     }
 
     @And("Validate get all product invalid parameter product resources json schema")
@@ -52,7 +42,6 @@ public class ProductsGetStepdefs {
         File jsonSchemaListUser = new File(Constant.JSON_SCHEMA_PRODUCTS + "GetAllInvalid.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListUser));
     }
-
 
     @Given("Get product by id {int} with valid parameter")
     public void getProductByIdWithValidParameter(int arg0) {
@@ -76,7 +65,6 @@ public class ProductsGetStepdefs {
         lapakProductsApi.setGetListProductsId(id);
 
     }
-
 
     @And("Validate get product by id invalid parameter product resources json schema")
     public void validateGetProductByIdInvalidParameterProductResourcesJsonSchema() {

@@ -26,10 +26,6 @@ public class GetCartStepdef {
         SerenityRest.when().get(CartAPI.GET_LIST_CART);
     }
 
-    @Then("Status code should be {int} OK")
-    public void statusCodeShouldBeOK(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
 
 
     @And("Validate json schema list cart")
@@ -47,8 +43,8 @@ public class GetCartStepdef {
         SerenityRest.when().get(CartAPI.GET_SINGLE_CART);
     }
 
-    @And("Validate get single data resource json schema")
-    public void validateGetsingleDataResourceJsonSchema(){
+    @And("Validate get single data cart resource json schema")
+    public void validateGetsingleDataCartResourceJsonSchema(){
         File jsonSchemaListResources = new File(ConstantCart.JSON_SCHEMA_GET_SINGLE +"GetSingleCartJSONSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchemaListResources));
     }

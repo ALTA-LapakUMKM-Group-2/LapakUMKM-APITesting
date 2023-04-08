@@ -23,9 +23,5 @@ public class PutCartStepdef {
     public void sendEditNewCart() {
         SerenityRest.when().put(CartAPI.PUT_UPDATE_CART);
     }
-    @Then("Status code should be {int} Not Found")
-    public void statusCodeShouldBeNotFound(int NotFound) {
-        SerenityRest.then().statusCode(NotFound);
-    }
 
 }
