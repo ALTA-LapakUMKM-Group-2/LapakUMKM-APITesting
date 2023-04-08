@@ -11,5 +11,5 @@ Feature: Get Discussion
   Scenario: Get Users With Invalid Parameter
       Given Get users data with invalid parameter
       When Send get users
-      Then Should return status code 200
+      Then Should return status code 401
   ##    And Validate get users invalid parameter json schema
