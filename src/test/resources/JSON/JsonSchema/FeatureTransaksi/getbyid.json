@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "total_product": {
+          "type": "integer"
+        },
+        "total_payment": {
+          "type": "integer"
+        },
+        "payment_status": {
+          "type": "string"
+        },
+        "payment_link": {
+          "type": "string"
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "full_name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "full_name"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "user_id",
+        "total_product",
+        "total_payment",
+        "payment_status",
+        "payment_link",
+        "user"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "data",
+    "message",
+    "status"
+  ]
+}
